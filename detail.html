@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aliagui Home — L'élégance au cœur de votre intérieur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+  </head>
+  <body>
+    <header id="siteHeader">
+      <div class="header-inner">
+        <a href="#top" class="logo">Aliagui Home</a>
+
+        <nav id="mainNav">
+          <ul>
+            <li><a href="accueil.html">Accueil</a></li>
+            <li><a href="histoire.html">Notre histoire</a></li>
+            <li><a href="collections.html">Collection</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="mobile-only-cta">
+              <a
+                class="header-cta"
+                href="https://wa.me/2250142789097"
+                target="_blank"
+                rel="noopener"
+                data-social="WhatsApp"
+              >
+                Commander sur WhatsApp
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.42.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.32.02.51-.1.2-.15.32-.3.5-.14.17-.3.38-.43.51-.14.14-.29.29-.13.57.17.28.75 1.24 1.61 2 1.11.99 2.04 1.3 2.32 1.44.28.14.44.12.6-.07.17-.2.72-.84.91-1.13.19-.28.38-.24.64-.14.26.09 1.66.78 1.94.93.28.14.47.21.53.33.07.12.07.68-.17 1.36z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <a
+          class="header-cta desktop-only-cta"
+          href="https://wa.me/2250142789097"
+          target="_blank"
+          rel="noopener"
+          data-social="WhatsApp"
+        >
+          Commander sur WhatsApp
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.42.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.32.02.51-.1.2-.15.32-.3.5-.14.17-.3.38-.43.51-.14.14-.29.29-.13.57.17.28.75 1.24 1.61 2 1.11.99 2.04 1.3 2.32 1.44.28.14.44.12.6-.07.17-.2.72-.84.91-1.13.19-.28.38-.24.64-.14.26.09 1.66.78 1.94.93.28.14.47.21.53.33.07.12.07.68-.17 1.36z"
+            />
+          </svg>
+        </a>
+
+        <button
+          class="hamburger"
+          id="hamburgerBtn"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <main class="product-detail-page">
+      <!-- 1. RETOUR AUX COLLECTIONS -->
+      <div class="back-nav">
+        <a href="#"
+          ><i class="fa-solid fa-arrow-left"></i> Retour aux collections</a
+        >
+      </div>
+
+      <!-- 2. SECTION PRINCIPALE PRODUIT -->
+      <section class="product-main-section">
+        <!-- Colonne Gauche : Galerie / Slider d'images -->
+        <div class="product-gallery">
+          <button class="slider-btn prev-btn">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="image-placeholder">
+            <!-- L'image du produit ira ici -->
+            <span>...</span>
+          </div>
+          <button class="slider-btn next-btn">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Colonne Droite : Infos produit -->
+        <div class="product-info-summary">
+          <h1 class="product-title">Nom</h1>
+          <h2 class="product-subtitle">Sous titre</h2>
+
+          <div class="product-description">
+            <p>voc,fjdkjdjzidsd[zoijfhhdjk</p>
+            <p>dsDJFDJFJJDIJSjdjjjjjjjjj</p>
+            <p>JJJJJJJJJJJJJJJJJJJJJJJJJ</p>
+            <p>JJJJJJJJJJJJJJJJJJJJJJJJJ</p>
+          </div>
+
+          <div class="product-actions">
+            <a href="#" class="btn-action btn-blue-whatsapp">
+              <i class="fa-brands fa-whatsapp"></i> COMMANDER VIA WHATSAPP
+            </a>
+            <a href="#" class="btn-action btn-terracotta-contact">
+              <i class="fa-solid fa-comments"></i> BESOIN D'UN CONSEIL ?
+              CONTACTEZ-NOUS
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SECTION SUGGESTIONS "VOUS AIMEREZ AUSSI" -->
+      <section class="suggestions-section">
+        <h2 class="section-title-centered">VOUS AIMEREZ AUSSI</h2>
+
+        <div class="suggestions-grid">
+          <!-- Carte 1 -->
+          <div class="suggestion-card">
+            <div class="card-img-placeholder"></div>
+            <div class="card-footer">
+              <span>NOM DU PRODUIT</span>
+              <a href="#"
+                >Voir les détails <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Carte 2 -->
+          <div class="suggestion-card">
+            <div class="card-img-placeholder"></div>
+            <div class="card-footer">
+              <span>NOM DU PRODUIT</span>
+              <a href="#"
+                >Voir les détails <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Carte 3 -->
+          <div class="suggestion-card">
+            <div class="card-img-placeholder"></div>
+            <div class="card-footer">
+              <span>NOM DU PRODUIT</span>
+              <a href="#"
+                >Voir les détails <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination du carrousel -->
+        <div class="carousel-pagination">
+          <i class="fa-solid fa-chevron-left"></i>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </section>
+
+      <!-- 4. SECTION AVIS CLIENTS -->
+      <section class="reviews-section">
+        <h2 class="reviews-title">Avis client</h2>
+
+        <div class="reviews-dashboard">
+          <!-- Note globale -->
+          <div class="global-rating-box">
+            <div class="rating-square"></div>
+            <div class="rating-score">
+              <h3>4,3</h3>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <span>(1457)</span>
+              <p>Moyenne de tous les avis dans toutes les langues</p>
+            </div>
+          </div>
+
+          <!-- Barres de répartition -->
+          <div class="rating-bars">
+            <div class="bar-row">
+              <span>5 <i class="fa-solid fa-star"></i></span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 75%"></div>
+              </div>
+              <span>1070</span>
+            </div>
+            <div class="bar-row">
+              <span>4 <i class="fa-solid fa-star"></i></span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 15%"></div>
+              </div>
+              <span>250</span>
+            </div>
+            <div class="bar-row">
+              <span>3 <i class="fa-solid fa-star"></i></span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 5%"></div>
+              </div>
+              <span>50</span>
+            </div>
+            <div class="bar-row">
+              <span>2 <i class="fa-solid fa-star"></i></span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 3%"></div>
+              </div>
+              <span>30</span>
+            </div>
+            <div class="bar-row">
+              <span>1 <i class="fa-solid fa-star"></i></span>
+              <div class="progress-bar">
+                <div class="progress" style="width: 2%"></div>
+              </div>
+              <span>15</span>
+            </div>
+          </div>
+
+          <!-- Critères détaillés -->
+          <div class="criteria-ratings">
+            <div class="criteria-row">
+              <span>Rapport qualité-prix</span>
+              <div class="mini-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-regular fa-star"></i> 4.0
+              </div>
+            </div>
+            <hr />
+            <div class="criteria-row">
+              <span>Style</span>
+              <div class="mini-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i> 5.0
+              </div>
+            </div>
+            <hr />
+            <div class="criteria-row">
+              <span>Matière</span>
+              <div class="mini-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-regular fa-star"></i> 4.0
+              </div>
+            </div>
+            <p class="recommendation-text">
+              <i class="fa-solid fa-thumbs-up"></i> 87% des clients recommandent
+              ce produit
+            </p>
+          </div>
+        </div>
+
+        <!-- Grille des commentaires clients -->
+        <div class="comments-grid">
+          <div class="comment-card text-center">
+            <div class="comment-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <h4>Sophie K.</h4>
+            <p>"J'ai commandé une parure de lit et je suis ravie..."</p>
+          </div>
+          <div class="comment-card text-center">
+            <div class="comment-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <h4>Zana M.</h4>
+            <p>"Une très belle découverte ! Les produits sont de qualité..."</p>
+          </div>
+          <div class="comment-card text-center">
+            <div class="comment-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <h4>Clara D.</h4>
+            <p>
+              "L'élégance du mélange entre moderne et impression africaine..."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. BARRE D'AVANTAGES (FOOTER D'AVANTAGES) -->
+      <section class="advantages-bar">
+        <div class="advantage-item">
+          <i class="fa-solid fa-truck"></i>
+          <div>
+            <h4>Livraison rapide</h4>
+            <p>Partout en CI en 24h-48h</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <i class="fa-solid fa-award"></i>
+          <div>
+            <h4>Qualité</h4>
+            <p>Tissus durablement sélectionnés</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <h4>Meilleur rapport qualité-prix</h4>
+            <p>Confection artisanale</p>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <i class="fa-solid fa-phone-volume"></i>
+          <div>
+            <h4>Commande facile</h4>
+            <p>Via WhatsApp</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand reveal">
+          <span class="logo">Aliagui Home</span>
+          <p>L'élégance au cœur de votre intérieur.</p>
+        </div>
+        <div class="footer-col reveal reveal-delay-1">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="accueil.html">Accueil</a></li>
+            <li><a href="histoire.html">Notre histoire</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col reveal reveal-delay-2">
+          <h5>Collections</h5>
+          <ul>
+            <li>
+              <a href="collections.html#collections"
+                >Collection : draps de lit</a
+              >
+            </li>
+            <li>
+              <a href="collections.html#collections"
+                >Collection : services de table</a
+              >
+            </li>
+            <li>
+              <a href="collections.html#collections">Collection : décoration</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col reveal reveal-delay-3">
+          <h5>Contact</h5>
+          <ul>
+            <li class="with-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              <div>Lieu <small>Riviera Anono</small></div>
+            </li>
+            <li class="with-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02l-2.2 2.2Z"
+                />
+              </svg>
+              <div>Numéro <small>+225 01 42 78 90 97</small></div>
+            </li>
+            <li class="with-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M3 6h18v12H3z" />
+                <path d="M3 6l9 7 9-7" />
+              </svg>
+              <div>Email <small>AliaguiHome@gmail.com</small></div>
+            </li>
+            <li class="with-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg>
+              <div>Horaire <small>Lun–Sam, 9h – 18h</small></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <div class="socials">
+            <h5>Suivez-nous</h5>
+            <div class="social-icons">
+              <a
+                href="https://instagram.com/aliaguihome"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                data-social="Instagram"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4.2" />
+                  <circle cx="17.4" cy="6.6" r="1" />
+                </svg>
+              </a>
+              <a
+                href="https://facebook.com/aliaguihome"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                data-social="Facebook"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M13.5 22v-8.5H16l.4-3.4h-2.9V8c0-.99.28-1.66 1.7-1.66H16.5V3.3c-.28-.04-1.24-.12-2.36-.12-2.34 0-3.94 1.43-3.94 4.04v2.28H7.7v3.4h2.5V22z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://tiktok.com/@aliaguihome"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok"
+                data-social="TikTok"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16.6 5.82c-.9-.85-1.4-2.03-1.4-3.32h-3.1v13.4a2.7 2.7 0 1 1-1.9-2.58v-3.15a5.8 5.8 0 1 0 5 5.75V9.4a6.9 6.9 0 0 0 3.7 1.07V7.4a4.2 4.2 0 0 1-2.3-1.58z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/2250142789097"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+                data-social="WhatsApp"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.42.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.32.02.51-.1.2-.15.32-.3.5-.14.17-.3.38-.43.51-.14.14-.29.29-.13.57.17.28.75 1.24 1.61 2 1.11.99 2.04 1.3 2.32 1.44.28.14.44.12.6-.07.17-.2.72-.84.91-1.13.19-.28.38-.24.64-.14.26.09 1.66.78 1.94.93.28.14.47.21.53.33.07.12.07.68-.17 1.36z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="newsletter">
+            <h5>Newsletter</h5>
+            <p>Recevez nos nouveautés et offres exclusives.</p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Votre email" required />
+              <button type="submit">S'abonner</button>
+            </form>
+            <div class="newsletter-msg" id="newsletterMsg">
+              Merci ! Vous êtes bien inscrit(e).
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">© 2026 Aliagui Home — Tous droits réservés</div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="java.js"></script>
+  </body>
+</html>

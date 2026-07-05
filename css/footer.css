@@ -1,0 +1,192 @@
+/* ==========================================================================
+   FOOTER.CSS — Pied de page (colonnes, réseaux sociaux, newsletter, copyright)
+   Importé sur TOUTES les pages.
+   ========================================================================== */
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:#fff; 
+    color:var(--ink);}
+
+  .footer-top{
+    max-width:1400px;
+    margin:0 auto;
+    padding:46px 30px 40px;
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr 1fr;
+    gap:48px;
+  }
+  .footer-brand .logo{
+    color:var(--ink);
+    margin-bottom:30px;
+    display:block;
+    font-family:'playfair display', serif;
+    font-style:normal;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    font-size:1.7rem;
+  }
+  .footer-brand p{
+    color:var(--muted); 
+    font-size:0.88rem; 
+    line-height:1.6; 
+    max-width:220px;}
+
+  .footer-col h5{
+    font-size:0.78rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin-bottom:25px;
+    color:var(--taupe);
+  }
+  .footer-col ul li{
+    margin-bottom:22px;}
+
+  .footer-col a{
+    font-size:0.9rem;
+    color:var(--ink);
+    position:relative;
+    transition:color 0.2s ease;
+  }
+  .footer-col a:hover{color:var(--terracotta);}
+  .footer-col .with-icon{
+    
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+  }
+  .footer-col .with-icon svg{
+    width:16px;height:16px;
+    color:var(--terracotta);
+    flex-shrink:0;
+    margin-top:2px;
+  }
+  .footer-col .with-icon div{
+    font-size:0.9rem;}
+
+  .footer-col .with-icon small{
+    color:var(--muted); 
+    display:block; 
+    font-size:0.8rem;}
+
+  .footer-bottom{
+    background:var(--footer-brown);
+    color:#f3e9df;
+  }
+  .footer-bottom-inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:60px 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:40px;
+  }
+  .socials h5, .newsletter h5{
+    font-size:0.78rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin-bottom:30px;
+    color:#f3e9df;
+  }
+  .social-icons{
+    display:flex; 
+    gap:20px;}
+
+  .social-icons a{
+    width:55px;height:55px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  .social-icons a:hover{
+    background:var(--terracotta);
+    transform:translateY(-4px);
+  }
+  .social-icons svg{
+    width:25px;
+    height:25px;
+    color:#fff;}
+
+  .newsletter p{
+    font-size:0.85rem; 
+    color:#e6d8c9;
+    margin-bottom:14px; 
+    max-width:280px;}
+    
+  .newsletter-form{
+    display:flex; 
+    max-width:320px;}
+    
+  .newsletter-form input{
+    flex:1;
+    padding: 14px 30px;
+    border:none;
+    font-family:'montserrat', sans-serif;
+    font-size:0.85rem;
+    border-radius:5px;
+    outline:none;
+  }
+  .newsletter-form button{
+    background:var(--terracotta);
+    color:#fff;
+    padding:0 30px;
+    font-size:0.82rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    border-radius:0 2px 2px 0;
+  }
+  .newsletter-form button:hover{background:var(--terracotta-dark);}
+  
+  .newsletter-msg{
+    font-size:0.78rem;
+    margin-top:10px;
+    color:#fff;
+    opacity:0;
+    transition:opacity 0.3s ease;
+  }
+  .newsletter-msg.show{opacity:1;}
+
+  .copyright{
+    background:var(--footer-brown-dark);
+    text-align:center;
+    padding:24px;
+    font-size:0.78rem;
+    color:#d8c6b6;
+  }
+
+  /* toast for social clicks */
+  .toast{
+    position:fixed;
+    bottom:24px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--ink);
+    color:#fff;
+    padding:12px 22px;
+    border-radius:30px;
+    font-size:0.85rem;
+    opacity:0;
+    pointer-events:none;
+    transition:all 0.35s ease;
+    z-index:999;
+  }
+  .toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+
+
+  /* --- Responsive --- */
+  @media(max-width:900px){
+    .footer-top{grid-template-columns:1fr 1fr; gap:44px;}
+    .footer-bottom-inner{flex-direction:column; align-items:flex-start;}
+  }
+  @media(max-width:600px){
+    .footer-top{grid-template-columns:1fr; padding:48px 20px 36px;}
+  }
