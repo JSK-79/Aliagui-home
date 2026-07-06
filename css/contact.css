@@ -1,0 +1,169 @@
+/* ==========================================================================
+   PAGE CONTACT - STYLES GÉNÉRAUX
+   ========================================================================== */
+.contact-page {
+    font-family: 'Arial', sans-serif; /* À remplacer par ta police si nécessaire */
+    color: #333;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* En-tête de la section (Titre + description) */
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif; /* Style élégant pour le titre */
+    margin-bottom: 15px;
+}
+
+.contact-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   DISPOSITION EN DEUX COLONNES (FLEXBOX)
+   ========================================================================== */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Chaque colonne prend la moitié de l'espace */
+.contact-info, .contact-form-container {
+    flex: 1;
+}
+
+.contact-info h2, .contact-form-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* ==========================================================================
+   COLONNE GAUCHE : LES CARTES D'INFO (Restons en contact)
+   ========================================================================== */
+.info-card {
+    display: flex;
+    align-items: center;
+    background-color: #FDF8F4; /* Fond beige très clair de la maquette */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.info-icon {
+    font-size: 24px;
+    color: #556B73; /* Couleur gris/bleu pour les icônes */
+    width: 40px;
+    text-align: center;
+}
+
+.info-text h3 {
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+}
+
+.info-text p {
+    margin: 0;
+    color: #777;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   COLONNE DROITE : LE FORMULAIRE
+   ========================================================================== */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Styles pour les inputs et le textarea */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #FDF8F4; /* Même fond beige clair */
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Supprime la bordure au clic mais garde un indicateur propre */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: 1px solid #A26B56; /* Couleur terracotta du thème */
+}
+
+/* Le bouton WhatsApp */
+.btn-whatsapp {
+    background-color: #556B73; /* Bleu/gris de la maquette */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #43545B; /* Un peu plus sombre au survol */
+}
+
+/* ==========================================================================
+   SECTION 2 : SHOWROOM
+   ========================================================================== */
+.showroom-section {
+    text-align: center;
+    margin-top: 80px;
+    border-top: 1px solid #EEE;
+    padding-top: 40px;
+}
+
+.showroom-section h2 {
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+}
+
+.showroom-section p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 1.05rem;
+}
+
+/* Le grand bloc gris/beige pour la carte */
+.showroom-map {
+    background-color: #FDF8F4;
+    height: 350px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Aligne les colonnes verticalement sur mobile */
+        gap: 30px;
+    }
+}

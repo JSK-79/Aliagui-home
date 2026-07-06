@@ -1,0 +1,125 @@
+/* ==========================================================================
+   BASE.CSS — Variables, réinitialisation, éléments génériques (boutons,
+   animations "reveal", toast). Importé sur TOUTES les pages, en premier.
+   ========================================================================== */
+
+:root{
+    --terracotta: #B5624A;
+    --terracotta-dark: #9C4A32;
+    --terracotta-light: #D98868;
+    --cream: #FAF6EF;
+    --cream-2: #FBF7F0;
+    --ink: black;
+    --muted: #6B5F55;
+    --taupe: #8C7A68;
+    --footer-brown: #937765;
+    --footer-brown-dark: #573A2C;
+    --navy: #56638A;
+    --line: rgba(43,36,32,0.12);
+  }
+
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;}
+
+  html{
+    scroll-behavior:smooth;}
+
+  body{
+    font-family:'Montserrat', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3{
+    font-family:'playfair display', serif;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+  a{text-decoration:none;color:var(--cream-2);}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  ul{list-style:none;}
+
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .reveal-delay-1{transition-delay:0.12s;}
+  .reveal-delay-2{transition-delay:0.24s;}
+  .reveal-delay-3{transition-delay:0.36s;}
+
+
+  /* Boutons génériques (hero, CTA divers) */
+  .btn{
+    padding:14px 30px;
+    border-radius:5px;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
+    display:inline-block;
+  }
+  .btn-outline{
+    border:1.5px solid var(--terracotta);
+    color:var(--terracotta);
+  }
+  .btn-outline:hover{
+    background:var(--terracotta);
+    color:#fff;
+    transform:translateY(-2px);
+  }
+  .btn-light{
+    background:#fff;
+    border:1.5px solid rgba(43,36,32,0.3);
+    color:var(--ink);
+  }
+  .btn-light:hover{
+    border-color:var(--ink);
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(43,36,32,0.12);
+  }
+  .btn-filled{
+    background:var(--terracotta);
+    color:#fff;
+    border:1.5px solid var(--terracotta);
+  }
+  .btn-filled:hover{
+    background:var(--terracotta-dark);
+    border-color:var(--terracotta-dark);
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(181,88,60,0.3);
+  }
+
+  /* toast pour les clics sur les réseaux sociaux */
+  .toast{
+    position:fixed;
+    bottom:24px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--ink);
+    color:#fff;
+    padding:12px 22px;
+    border-radius:30px;
+    font-size:0.85rem;
+    opacity:0;
+    pointer-events:none;
+    transition:all 0.35s ease;
+    z-index:999;
+  }
+  .toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none; transition:none ;}
+    .reveal{opacity:1; transform:none;}
+  }

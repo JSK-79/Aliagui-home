@@ -1,0 +1,344 @@
+/* ============================================================
+   NOTRE-HISTOIRE.CSS - Styles spécifiques à la page Notre Histoire
+   ============================================================ */
+
+/* ============================================================
+   HERO HISTOIRE - CERCLE + TEXTE
+   ============================================================ */
+.hero-histoire {
+    background: var(--cream);
+    padding: 50px 32px 40px;
+    border-bottom: 1px solid var(--line);
+}
+
+.hero-histoire .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Cercle avec logo */
+.hero-histoire .circle-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #C9BBA5, #9C8570);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 30px rgba(43, 36, 32, 0.15);
+}
+
+.hero-histoire .circle-logo svg {
+    width: 70px;
+    height: 70px;
+}
+
+.hero-histoire .hero-text {
+    flex: 1;
+}
+
+.hero-histoire .hero-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.15;
+}
+
+.hero-histoire .hero-text p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    font-family: 'Jost', sans-serif;
+    max-width: 600px;
+}
+
+/* ============================================================
+   SECTION HISTOIRE
+   ============================================================ */
+.histoire-section {
+    padding: 60px 20px;
+    background: var(--cream-2);
+}
+
+.histoire-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.histoire-section .section-head {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.histoire-section .section-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-weight: 600;
+    color: var(--ink);
+    position: relative;
+    display: inline-block;
+}
+
+.histoire-section .section-head h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--terracotta);
+}
+
+.histoire-section .section-head p {
+    color: var(--muted);
+    max-width: 700px;
+    margin: 16px auto 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   NOS FABRICATIONS - 3 ICÔNES
+   ============================================================ */
+.fabrications-section {
+    padding: 60px 20px 70px;
+    background: var(--cream);
+}
+
+.fabrications-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fabrications-section .section-head {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.fabrications-section .section-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-weight: 600;
+    color: var(--ink);
+    position: relative;
+    display: inline-block;
+}
+
+.fabrications-section .section-head h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--terracotta);
+}
+
+.fabrications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.fabrication-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fabrication-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(43, 36, 32, 0.08);
+    border-color: var(--terracotta);
+}
+
+.fabrication-card .icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 2rem;
+    color: var(--terracotta);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.fabrication-card:hover .icon {
+    background: var(--terracotta);
+    color: #fff;
+}
+
+.fabrication-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+}
+
+.fabrication-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   NOS VALEURS - 4 CARTES
+   ============================================================ */
+.valeurs-section {
+    padding: 60px 20px 70px;
+    background: var(--cream-2);
+}
+
+.valeurs-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.valeurs-section .section-head {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.valeurs-section .section-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-weight: 600;
+    color: var(--ink);
+    position: relative;
+    display: inline-block;
+}
+
+.valeurs-section .section-head h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--terracotta);
+}
+
+.valeurs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.valeur-card {
+    background: #fff;
+    padding: 30px 24px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--line);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.valeur-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(43, 36, 32, 0.08);
+    border-color: var(--terracotta);
+}
+
+.valeur-card .icon {
+    font-size: 2.5rem;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.valeur-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+}
+
+.valeur-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   CITATION
+   ============================================================ */
+.citation-section {
+    padding: 50px 20px 60px;
+    background: var(--terracotta);
+    text-align: center;
+    color: #fff;
+}
+
+.citation-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.citation-section blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.citation-section blockquote::before {
+    content: '"';
+    font-size: 3rem;
+    opacity: 0.3;
+    display: block;
+    margin-bottom: -20px;
+}
+
+.citation-section blockquote::after {
+    content: '"';
+    font-size: 3rem;
+    opacity: 0.3;
+    display: block;
+    margin-top: -20px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 992px) {
+    .fabrications-grid { grid-template-columns: repeat(2, 1fr); }
+    .valeurs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .hero-histoire .hero-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-histoire .hero-text p { max-width: 100%; }
+    .hero-histoire .circle-logo { width: 100px; height: 100px; }
+    .hero-histoire .circle-logo svg { width: 55px; height: 55px; }
+
+    .fabrications-grid { grid-template-columns: 1fr; gap: 24px; }
+    .valeurs-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 480px) {
+    .hero-histoire .hero-text h1 { font-size: 1.6rem; }
+    .hero-histoire .circle-logo { width: 80px; height: 80px; }
+    .hero-histoire .circle-logo svg { width: 45px; height: 45px; }
+    .fabrication-card .icon { width: 60px; height: 60px; font-size: 1.5rem; }
+}

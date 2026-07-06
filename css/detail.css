@@ -1,0 +1,408 @@
+/* ==========================================================================
+   PAGE DÉTAIL PRODUIT (FLEXBOX & LAYOUT)
+   ========================================================================== */
+
+.product-detail-page{
+    max-width:1200px;
+    margin:0 auto;
+    padding:40px 30px 80px;
+}
+
+/* ----- 1. Retour aux collections ----- */
+.back-nav{
+    margin-bottom:24px;
+}
+.back-nav a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--muted);
+    font-size:0.9rem;
+    font-weight:500;
+    transition:color 0.25s ease;
+}
+.back-nav a:hover{
+    color:var(--terracotta);
+}
+
+/* ----- 2. Section principale produit ----- */
+.product-main-section{
+    display:flex;
+    gap:60px;
+    align-items:flex-start;
+    margin-bottom:80px;
+}
+
+/* Colonne gauche : galerie */
+.product-gallery{
+    flex:1;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.image-placeholder{
+    width:100%;
+    height:500px;
+    background:var(--cream-2);
+    border:1px dashed var(--line);
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--taupe);
+    font-size:1.2rem;
+}
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ink);
+    z-index:2;
+    transition:background 0.25s ease, color 0.25s ease;
+}
+.slider-btn:hover{
+    background:var(--terracotta);
+    color:#fff;
+}
+.prev-btn{left:14px;}
+.next-btn{right:14px;}
+
+/* Colonne droite : infos produit */
+.product-info-summary{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+.product-title{
+    font-size:2.4rem;
+    color:var(--ink);
+    margin:0;
+}
+.product-subtitle{
+    font-size:1.1rem;
+    font-weight:400;
+    color:var(--muted);
+    margin:0 0 6px;
+}
+.product-description p{
+    line-height:1.7;
+    color:var(--muted);
+    font-size:1rem;
+    margin-bottom:10px;
+}
+.product-actions{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-top:10px;
+}
+.btn-action{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 24px;
+    border-radius:6px;
+    font-size:0.95rem;
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-align:center;
+    transition:transform 0.2s ease, opacity 0.25s ease;
+}
+.btn-action:hover{
+    transform:translateY(-2px);
+    opacity:0.92;
+}
+.btn-blue-whatsapp{
+    background:var(--navy);
+    color:#fff;
+}
+.btn-terracotta-contact{
+    background:var(--terracotta);
+    color:#fff;
+}
+
+/* ----- 3. Vous aimerez aussi ----- */
+.suggestions-section{
+    text-align:center;
+    margin-bottom:80px;
+}
+.section-title-centered{
+    font-size:1.8rem;
+    margin-bottom:36px;
+}
+.suggestions-grid{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+    text-align:left;
+}
+.suggestion-card{
+    flex:1 1 280px;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.06);
+}
+.card-img-placeholder{
+    width:100%;
+    height:220px;
+    background:var(--taupe);
+}
+.card-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 18px;
+    font-size:0.9rem;
+}
+.card-footer span{
+    font-weight:600;
+    letter-spacing:0.02em;
+}
+.card-footer a{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    color:var(--terracotta);
+    font-weight:600;
+    font-size:0.85rem;
+}
+.carousel-pagination{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin-top:32px;
+    color:var(--muted);
+}
+.dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--line);
+    display:inline-block;
+}
+.dot.active{
+    background:var(--terracotta);
+}
+
+/* ----- 4. Avis clients ----- */
+.reviews-section{
+    margin-bottom:80px;
+}
+.reviews-title{
+    font-size:1.8rem;
+    margin-bottom:32px;
+    text-align:center;
+}
+.reviews-dashboard{
+    display:flex;
+    gap:50px;
+    align-items:flex-start;
+    margin-bottom:50px;
+}
+.global-rating-box{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex:0 0 260px;
+}
+.rating-square{
+    width:70px;
+    height:70px;
+    border-radius:8px;
+    background:var(--taupe);
+    flex-shrink:0;
+}
+.rating-score h3{
+    font-size:2rem;
+    margin:0 0 4px;
+}
+.stars, .mini-stars{
+    color:var(--terracotta);
+    font-size:0.9rem;
+}
+.rating-score span{
+    display:block;
+    font-size:0.85rem;
+    color:var(--muted);
+    margin:4px 0;
+}
+.rating-score p{
+    font-size:0.8rem;
+    color:var(--muted);
+    max-width:220px;
+}
+.rating-bars{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.bar-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:0.85rem;
+    color:var(--muted);
+}
+.bar-row span:first-child{
+    flex:0 0 40px;
+}
+.bar-row span:last-child{
+    flex:0 0 40px;
+    text-align:right;
+}
+.progress-bar{
+    flex:1;
+    height:8px;
+    background:var(--line);
+    border-radius:4px;
+    overflow:hidden;
+}
+.progress{
+    height:100%;
+    background:var(--terracotta);
+    border-radius:4px;
+}
+.criteria-ratings{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.criteria-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:0.9rem;
+}
+.criteria-row hr{
+    border:none;
+}
+.recommendation-text{
+    font-size:0.9rem;
+    color:var(--muted);
+    margin-top:6px;
+}
+.comments-grid{
+    display:flex;
+    gap:26px;
+    flex-wrap:wrap;
+}
+.comment-card{
+    flex:1 1 280px;
+    background:var(--taupe);
+    color:#fff;
+    border-radius:8px;
+    padding:26px 22px;
+}
+.comment-card .comment-stars{
+    color:#fff;
+}
+.comment-card h4{
+    margin:10px 0 8px;
+    font-size:1rem;
+    color:#fff;
+}
+.comment-card p{
+    font-size:0.9rem;
+    color:rgba(255,255,255,0.9);
+    line-height:1.5;
+}
+.text-center{
+    text-align:center;
+}
+
+/* ----- 5. Barre d'avantages ----- */
+.advantages-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    justify-content:space-between;
+    padding:40px 30px;
+    background:#fff;
+    max-width:1200px;
+    margin:0 auto 40px;
+}
+.advantage-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:10px;
+    flex:1 1 200px;
+    padding:0 20px;
+    border-right:1px solid var(--line);
+}
+.advantage-item:last-child{
+    border-right:none;
+}
+.advantage-item i{
+    font-size:1.6rem;
+    color:var(--terracotta);
+}
+.advantage-item h4{
+    font-size:0.9rem;
+    margin:0 0 4px;
+}
+.advantage-item p{
+    font-size:0.8rem;
+    color:var(--muted);
+    margin:0;
+}
+
+/* ==========================================================================
+   RESPONSIVE (MOBILE & TABLETTE)
+   ========================================================================== */
+@media (max-width: 900px){
+    .product-main-section{
+        flex-direction:column;
+        gap:36px;
+    }
+    .reviews-dashboard{
+        flex-direction:column;
+        gap:30px;
+    }
+    .global-rating-box{
+        flex:1 1 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-detail-page{
+        padding:24px 20px 60px;
+    }
+    .image-placeholder{
+        height:340px;
+    }
+    .product-title{
+        font-size:1.9rem;
+    }
+    .suggestions-grid,
+    .comments-grid{
+        flex-direction:column;
+    }
+    .advantages-bar{
+        flex-direction:column;
+    }
+    .advantage-item{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+        padding-bottom:20px;
+    }
+    .advantage-item:last-child{
+        border-bottom:none;
+    }
+}
