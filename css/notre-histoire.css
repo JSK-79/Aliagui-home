@@ -1,344 +1,238 @@
-/* ============================================================
-   NOTRE-HISTOIRE.CSS - Styles spécifiques à la page Notre Histoire
-   ============================================================ */
+  :root{
+    --rust:#b6603f;
+    --rust-dark:#9a4d31;
+    --cream:#faf3ea;
+    --cream-soft:#f3e6d8;
+    --peach:#f1ddc7;
+    --navy:#26364c;
+    --ink:#2c2118;
+    --ink-soft:#6b5d51;
+    --line:#e8dcce;
+  }
 
-/* ============================================================
-   HERO HISTOIRE - CERCLE + TEXTE
-   ============================================================ */
-.hero-histoire {
-    background: var(--cream);
-    padding: 50px 32px 40px;
-    border-bottom: 1px solid var(--line);
-}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Playfair display', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    overflow-x:hidden;
+    width:100%;
+  }
+  img{ max-width:100%; display:block; }
+  h1,h2,h3{
+    font-family:'Playfair Display', serif;
+    margin:0;
+  }
+  p{ line-height:1.7; color:var(--ink-soft); }
 
-.hero-histoire .hero-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
+  /* ---------- reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+  .reveal-scale{
+    opacity:0;
+    transform:scale(.92);
+    transition:opacity .9s ease, transform .9s ease;
+  }
+  .reveal-scale.is-visible{ opacity:1; transform:scale(1); }
+  .stagger.is-visible .stagger-item{ opacity:1; transform:translateY(0); }
+  .stagger-item{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .stagger-item:nth-child(1){transition-delay:.05s;}
+  .stagger-item:nth-child(2){transition-delay:.18s;}
+  .stagger-item:nth-child(3){transition-delay:.31s;}
+  .stagger-item:nth-child(4){transition-delay:.44s;}
 
-/* Cercle avec logo */
-.hero-histoire .circle-logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #C9BBA5, #9C8570);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 8px 30px rgba(43, 36, 32, 0.15);
-}
+  /* ---------- Hero : pleine largeur ---------- */
+  .hero{
+    position:relative;
+    width:100%;
+    padding:80px 5vw 70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:2vw;
+  }
+  .hero-text{ flex:1 1 480px; max-width:640px; }
+  .hero-text h1{
+    font-size:clamp(30px, 4.2vw, 48px);
+    line-height:1.25;
+    color:var(--ink);
+    margin-bottom:24px;
+  }
+  .hero-text h1 em{ font-style:italic; color:var(--rust); }
+  .hero-text p{ font-size:16px; margin-bottom:16px; }
+  .hero-text b{ color:var(--ink); font-weight:600; }
 
-.hero-histoire .circle-logo svg {
-    width: 70px;
-    height: 70px;
-}
+  .hero-visual{
+    position:relative;
+    flex:1 1 380px;
+    max-width:460px;
+    aspect-ratio:1/1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .hero-blob{
+    position:absolute;
+    inset:-6%;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--peach), var(--cream-soft));
+    animation:float 7s ease-in-out infinite;
+    z-index:0;
+  }
+  .hero-photo{
+    position:relative;
+    width:82%;
+    height:82%;
+    border-radius:50%;
+    overflow:hidden;
+    box-shadow:0 25px 55px rgba(182,96,63,.28);
+    z-index:1;
+  }
+  .hero-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    filter:saturate(.85) sepia(.12);
+    transition:transform .8s ease;
+  }
+  .hero-visual:hover .hero-photo img{ transform:scale(1.06); }
+  @keyframes float{
+    0%,100%{ transform:translateY(0px); }
+    50%{ transform:translateY(-14px); }
+  }
 
-.hero-histoire .hero-text {
-    flex: 1;
-}
+   /* ---------- Fabrications : panneau pêche ---------- */
+  .fab-section{ width:100%; padding:20px 6vw 60px; }
+  .fab-panel{
+    background:var(--peach);
+    border-radius:22px;
+    padding:44px 4vw;
+    display:flex;
+    gap:4vw;
+    align-items:stretch;
+  }
+  .fab-left{ flex:1 1 48%; display:flex; flex-direction:column; justify-content:center; }
+  .fab-left h2{ font-size:26px; margin-bottom:14px; }
+  .fab-left p{ font-size:14.5px; margin-bottom:8px; max-width:440px; }
 
-.hero-histoire .hero-text h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 10px;
-    line-height: 1.15;
-}
+  .fab-right{
+    flex:1 1 48%;
+    border-radius:14px;
+    overflow:hidden;
+    min-height:280px;
+    background:#fff;
+    border:1px solid rgba(255,255,255,.6);
+  }
+  .fab-right img{ width:100%; height:100%; min-height:280px; object-fit:cover; filter:saturate(.75) sepia(.1); transition:transform .7s ease; }
+  .fab-right:hover img{ transform:scale(1.08); }
 
-.hero-histoire .hero-text p {
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.8;
-    font-family: 'Jost', sans-serif;
-    max-width: 600px;
-}
+  .fab-items{ display:flex; gap:30px; margin-top:30px; }
+  .fab-item{ text-align:center; transition:transform .35s ease; }
+  .fab-item:hover{ transform:translateY(-6px); }
+  .fab-icon{
+    width:54px; height:54px;
+    margin:0 auto 10px;
+    border-radius:50%;
+    background:var(--navy);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff;
+    transition:transform .35s ease, background .35s ease;
+  }
+  .fab-item:hover .fab-icon{ background:var(--navy-dark); transform:scale(1.08) rotate(-6deg); }
+  .fab-icon svg{ width:22px; height:22px; }
+  .fab-item h4{ font-weight:700; font-size:12px; letter-spacing:.6px; margin-bottom:5px; color:var(--ink); }
+  .fab-item p{ font-size:10.5px; line-height:1.4; margin:0; max-width:100px; }
 
-/* ============================================================
-   SECTION HISTOIRE
-   ============================================================ */
-.histoire-section {
-    padding: 60px 20px;
-    background: var(--cream-2);
-}
 
-.histoire-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+  /* ---------- Valeurs ---------- */
+  .valeurs-section{ width:100%; padding:60px 6vw; }
+  .valeurs-title{
+    text-align:center;
+    font-family:'Playfair Display', serif;
+    font-size:16px;
+    letter-spacing:.5px;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  .valeurs-title::after{
+    content:'';
+    display:block;
+    width:1px; height:0;
+  }
+  .valeurs-rule{ width:60%; max-width:640px; height:1px; background:var(--line); margin:0 auto 0; }
 
-.histoire-section .section-head {
-    text-align: center;
-    margin-bottom: 40px;
-}
+  .valeurs-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    margin-top:0;
+  }
+  .valeur-card{
+    padding:34px 24px;
+    text-align:center;
+    border-left:1px solid var(--line);
+    transition:background .3s ease, transform .3s ease;
+  }
+  .valeur-card:first-child{ border-left:none; }
+  .valeur-card:hover{ background:var(--cream); transform:translateY(-4px); }
+  .valeur-icon{ width:34px; height:34px; margin:0 auto 16px; color:var(--navy); }
+  .valeur-icon svg{ width:100%; height:100%; }
+  .valeur-card h4{ font-size:13.5px; font-weight:700; margin-bottom:8px; color:var(--ink); }
+  .valeur-card p{ font-size:11.5px; margin:0; }
 
-.histoire-section .section-head h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3vw, 2.6rem);
-    font-weight: 600;
-    color: var(--ink);
-    position: relative;
-    display: inline-block;
-}
+  /* ---------- Bandeau citation pleine largeur ---------- */
+  .quote-banner{
+    width:100%;
+    background:var(--navy);
+    color:#f4ece0;
+    padding:50px 8vw;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .quote-banner::before,
+  .quote-banner::after{
+    content:'';
+    position:absolute;
+    width:220px;height:220px;
+    border-radius:50%;
+    background:rgba(255,255,255,.04);
+  }
+  .quote-banner::before{ top:-100px; left:-60px; }
+  .quote-banner::after{ bottom:-120px; right:-40px; }
+  .quote-banner p{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:clamp(17px,2vw,21px);
+    color:#f4ece0;
+    max-width:760px;
+    margin:0 auto;
+    position:relative;
+  }
 
-.histoire-section .section-head h2::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--terracotta);
-}
+  @media (max-width:900px){
+    .hero{ flex-direction:column; text-align:center; padding-top:60px; }
+    .hero-text{ max-width:100%; }
+    .fab-wrap{ flex-direction:column; }
+    .valeurs-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:520px){
+    .valeurs-grid{ grid-template-columns:1fr; }
+    .fab-items{ flex-direction:column; gap:24px; }
+  }
 
-.histoire-section .section-head p {
-    color: var(--muted);
-    max-width: 700px;
-    margin: 16px auto 0;
-    font-size: 1.05rem;
-    line-height: 1.8;
-}
-
-/* ============================================================
-   NOS FABRICATIONS - 3 ICÔNES
-   ============================================================ */
-.fabrications-section {
-    padding: 60px 20px 70px;
-    background: var(--cream);
-}
-
-.fabrications-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.fabrications-section .section-head {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.fabrications-section .section-head h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3vw, 2.6rem);
-    font-weight: 600;
-    color: var(--ink);
-    position: relative;
-    display: inline-block;
-}
-
-.fabrications-section .section-head h2::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--terracotta);
-}
-
-.fabrications-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.fabrication-card {
-    text-align: center;
-    padding: 30px 20px;
-    background: #fff;
-    border-radius: 12px;
-    border: 1px solid var(--line);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fabrication-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 40px rgba(43, 36, 32, 0.08);
-    border-color: var(--terracotta);
-}
-
-.fabrication-card .icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: var(--cream);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    font-size: 2rem;
-    color: var(--terracotta);
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.fabrication-card:hover .icon {
-    background: var(--terracotta);
-    color: #fff;
-}
-
-.fabrication-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 8px;
-}
-
-.fabrication-card p {
-    color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-/* ============================================================
-   NOS VALEURS - 4 CARTES
-   ============================================================ */
-.valeurs-section {
-    padding: 60px 20px 70px;
-    background: var(--cream-2);
-}
-
-.valeurs-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.valeurs-section .section-head {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.valeurs-section .section-head h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3vw, 2.6rem);
-    font-weight: 600;
-    color: var(--ink);
-    position: relative;
-    display: inline-block;
-}
-
-.valeurs-section .section-head h2::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--terracotta);
-}
-
-.valeurs-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.valeur-card {
-    background: #fff;
-    padding: 30px 24px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid var(--line);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.valeur-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(43, 36, 32, 0.08);
-    border-color: var(--terracotta);
-}
-
-.valeur-card .icon {
-    font-size: 2.5rem;
-    color: var(--terracotta);
-    margin-bottom: 12px;
-    display: block;
-}
-
-.valeur-card h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 8px;
-}
-
-.valeur-card p {
-    color: var(--muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-/* ============================================================
-   CITATION
-   ============================================================ */
-.citation-section {
-    padding: 50px 20px 60px;
-    background: var(--terracotta);
-    text-align: center;
-    color: #fff;
-}
-
-.citation-section .container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.citation-section blockquote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
-    font-weight: 600;
-    font-style: italic;
-    line-height: 1.4;
-}
-
-.citation-section blockquote::before {
-    content: '"';
-    font-size: 3rem;
-    opacity: 0.3;
-    display: block;
-    margin-bottom: -20px;
-}
-
-.citation-section blockquote::after {
-    content: '"';
-    font-size: 3rem;
-    opacity: 0.3;
-    display: block;
-    margin-top: -20px;
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 992px) {
-    .fabrications-grid { grid-template-columns: repeat(2, 1fr); }
-    .valeurs-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-    .hero-histoire .hero-inner {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-histoire .hero-text p { max-width: 100%; }
-    .hero-histoire .circle-logo { width: 100px; height: 100px; }
-    .hero-histoire .circle-logo svg { width: 55px; height: 55px; }
-
-    .fabrications-grid { grid-template-columns: 1fr; gap: 24px; }
-    .valeurs-grid { grid-template-columns: 1fr; gap: 20px; }
-}
-
-@media (max-width: 480px) {
-    .hero-histoire .hero-text h1 { font-size: 1.6rem; }
-    .hero-histoire .circle-logo { width: 80px; height: 80px; }
-    .hero-histoire .circle-logo svg { width: 45px; height: 45px; }
-    .fabrication-card .icon { width: 60px; height: 60px; font-size: 1.5rem; }
-}
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    .reveal, .reveal-scale, .stagger-item{ opacity:1; transform:none; }
+  }

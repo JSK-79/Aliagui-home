@@ -144,11 +144,30 @@
           <!-- Colonne Droite : Formulaire -->
           <div class="contact-form-container">
             <h2>Formulaire de contact</h2>
-            <form action="#" method="POST" class="contact-form">
-              <input type="text" name="nom" placeholder="Nom" required />
-              <input type="email" name="email" placeholder="Email" required />
-              <input type="text" name="sujet" placeholder="Sujet" required />
+            <form id="contactForm" class="contact-form" novalidate>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                placeholder="Nom"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="text"
+                id="sujet"
+                name="sujet"
+                placeholder="Sujet"
+                required
+              />
               <textarea
+                id="message"
                 name="message"
                 placeholder="Message"
                 rows="5"
@@ -159,6 +178,8 @@
                 <i class="fa-brands fa-whatsapp"></i> Chattez avec nous sur
                 WhatsApp
               </button>
+
+              <p class="form-note" id="formNote"></p>
             </form>
           </div>
         </div>
@@ -172,11 +193,24 @@
           et apprécier toute la richesse du linge de maison en pagne.
         </p>
         <div class="showroom-map">
-          <!-- Emplacement pour la carte ou l'image -->
+          <iframe
+            src="https://www.google.com/maps?q=Riviera+Anono,+Abidjan,+Côte+d'Ivoire&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation du showroom Aliagui Home"
+          >
+          </iframe>
         </div>
+        <a
+          class="showroom-link"
+          href="https://www.google.com/maps/search/?api=1&query=Riviera+Anono,+Abidjan,+Côte+d'Ivoire"
+          target="_blank"
+          rel="noopener"
+        >
+          Ouvrir dans Google Maps →
+        </a>
       </section>
     </main>
-
     <footer>
       <div class="footer-top">
         <div class="footer-brand reveal">
@@ -350,5 +384,6 @@
     <div class="toast" id="toast"></div>
 
     <script src="java.js"></script>
+    <script src="contact.js"></script>
   </body>
 </html>

@@ -1,32 +1,39 @@
 /* ==========================================================================
    PAGE CONTACT - STYLES GÉNÉRAUX
    ========================================================================== */
-.contact-page {
-    font-family: 'Arial', sans-serif; /* À remplacer par ta police si nécessaire */
-    color: #333;
-    padding: 40px 20px;
+ .contact-page {
+    font-family: 'Playfair display', Arial, sans-serif;
+    padding: 90px 20px 110px;
     max-width: 1200px;
     margin: 0 auto;
-}
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 90px;
+  }
 
 /* En-tête de la section (Titre + description) */
 .contact-header {
     text-align: center;
-    margin-bottom: 50px;
 }
 
 .contact-header h1 {
-    font-size: 2.5rem;
-    font-family: 'Playfair Display', serif; /* Style élégant pour le titre */
+    font-size: 2.6rem;
+    font-family: 'Playfair display', serif;
+    font-weight: 600;
     margin-bottom: 15px;
-}
+    color: #1F1F1F;
+  }
 
-.contact-header p {
-    color: #666;
-    font-size: 1.1rem;
-    max-width: 600px;
+ .contact-header p {
+    padding-top: 25px;
+    color: #9C8570;
+    font-size: 1.05rem;
+    max-width: 620px;
     margin: 0 auto;
-}
+    line-height: 1.6;
+  }
 
 /* ==========================================================================
    DISPOSITION EN DEUX COLONNES (FLEXBOX)
@@ -34,97 +41,145 @@
 .contact-container {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 60px;
-}
+    align-items: stretch;
+    gap: 50px;
+  }
 
 /* Chaque colonne prend la moitié de l'espace */
-.contact-info, .contact-form-container {
+ .contact-info, .contact-form-container {
     flex: 1;
-}
-
-.contact-info h2, .contact-form-container h2 {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    font-family: 'Playfair Display', serif;
-}
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-info h2, .contact-form-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 28px;
+    font-family: 'Playfair display', serif;
+    font-weight: 600;
+    color: #1F1F1F;
+    padding: 8px;
+    margin: 20px auto;
+  }
 
 /* ==========================================================================
    COLONNE GAUCHE : LES CARTES D'INFO (Restons en contact)
    ========================================================================== */
-.info-card {
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    flex: 1;
+  }
+  .info-card {
     display: flex;
     align-items: center;
-    background-color: #FDF8F4; /* Fond beige très clair de la maquette */
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    gap: 20px;
-}
+    background-color: #FFFFFF;
+    border: 1px solid #56638A;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.045);
+    padding: 20px 22px;
+    border-radius: 10px;
+    gap: 18px;
+    flex: none;
+    opacity: 0;
+    transform: translateY(26px);
+    transition: all .35s ease;
+  }
+  .info-card:hover {
+    transform: translateY(-6px);
+    border-color: #56638A;
+  }
 
 .info-icon {
-    font-size: 24px;
-    color: #556B73; /* Couleur gris/bleu pour les icônes */
-    width: 40px;
-    text-align: center;
-}
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #56638A;
+  }
+  .icon-terracotta { background-color: #C1795A; }
+  .icon-slate { background-color: #55707A; }
+  .info-text h3 { font-size: 1.05rem; margin: 0 0 4px 0; color: #1F1F1F; font-weight: 600; }
+  .info-text p { margin: 0; color: #8C7A68; font-size: 0.92rem; line-height: 1.4; }
 
-.info-text h3 {
-    font-size: 1.1rem;
-    margin: 0 0 5px 0;
-}
+  @keyframes pulseIcon {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+  .info-card:hover .info-icon { animation: pulseIcon 0.6s ease; }
 
-.info-text p {
-    margin: 0;
-    color: #777;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
 
 /* ==========================================================================
    COLONNE DROITE : LE FORMULAIRE
    ========================================================================== */
-.contact-form {
+ .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-}
+    gap: 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #ECE6E1;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.045);
+    padding: 34px;
+    border-radius: 10px;
+    flex: 1;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(26px);
+  }
 
-/* Styles pour les inputs et le textarea */
-.contact-form input, 
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    background-color: #FDF8F4; /* Même fond beige clair */
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #333;
-    box-sizing: border-box;
-}
 
 /* Supprime la bordure au clic mais garde un indicateur propre */
-.contact-form input:focus, 
-.contact-form textarea:focus {
-    outline: 1px solid #A26B56; /* Couleur terracotta du thème */
-}
+ .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2DED9;
+    border-radius: 6px;
+    font-size: 0.98rem;
+    color: #333;
+    font-family: inherit;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: #A8A8A8; }
+  .contact-form textarea { resize: vertical; min-height: 120px; }
+  .contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: #56638A;
+    box-shadow: 0 0 0 3px rgba(193,121,90,0.12);
+  }
+  .contact-form input.input-error, .contact-form textarea.input-error { border-color: #C0392B; }
 
 /* Le bouton WhatsApp */
 .btn-whatsapp {
-    background-color: #556B73; /* Bleu/gris de la maquette */
-    color: white;
+    background-color: #56638A;
+    color: #fff;
     border: none;
     padding: 15px;
-    border-radius: 4px;
-    font-size: 1rem;
+    border-radius: 6px;
+    font-size: 0.98rem;
+    font-family: inherit;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    margin-top: 6px;
+  }
+  .btn-whatsapp:hover { background-color: #55707A; transform: translateY(-2px); }
+  .btn-whatsapp:active { transform: translateY(0); }
+
+  .form-note {
+    font-size: 0.85rem;
+    color: #999;
+    text-align: center;
+    margin: -4px 0 0;
+    min-height: 1.1em;
+  }
+  .form-note.success { color: #4C7A5B; }
 
 .btn-whatsapp:hover {
     background-color: #43545B; /* Un peu plus sombre au survol */
@@ -133,37 +188,92 @@
 /* ==========================================================================
    SECTION 2 : SHOWROOM
    ========================================================================== */
-.showroom-section {
+ .showroom-section {
     text-align: center;
-    margin-top: 80px;
-    border-top: 1px solid #EEE;
-    padding-top: 40px;
-}
-
-.showroom-section h2 {
-    font-size: 2rem;
-    font-family: 'Playfair Display', serif;
+    border-top: 1px solid #EFEFEF;
+    padding-top: 55px;
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  .showroom-section h2 {
+    font-size: 1.9rem;
+    font-family: 'Playfair display', serif;
+    font-weight: 600;
     margin-bottom: 15px;
-}
+    color: #1F1F1F;
+  }
 
 .showroom-section p {
-    color: #666;
+    padding-top:15px;
+    color: #8C7A68;
     max-width: 700px;
     margin: 0 auto 30px auto;
-    font-size: 1.05rem;
-}
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 
 /* Le grand bloc gris/beige pour la carte */
 .showroom-map {
-    background-color: #FDF8F4;
-    height: 350px;
+    background-color: #FFFFFF;
+    border: 1px solid #ECE6E1;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.045);
+    height: 380px;
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column; /* Aligne les colonnes verticalement sur mobile */
-        gap: 30px;
-    }
-}
+    border-radius: 16px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .showroom-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .showroom-link {
+    display: inline-block;
+    font-size: 0.92rem;
+    color: #C1795A;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease;
+    padding-top: 30px;
+  }
+  .showroom-link:hover { border-color: #C1795A; }
+
+   /* ---- Animation d'apparition au scroll ---- */
+  .reveal-in { animation: fadeInUp 0.7s ease forwards; }
+  .contact-header.reveal-in,
+  .contact-info h2.reveal-in,
+  .contact-form-container h2.reveal-in { opacity: 0; transform: translateY(26px); }
+  .info-card.reveal-in:nth-child(1) { animation-delay: 0.05s; }
+  .info-card.reveal-in:nth-child(2) { animation-delay: 0.15s; }
+  .info-card.reveal-in:nth-child(3) { animation-delay: 0.25s; }
+  .info-card.reveal-in:nth-child(4) { animation-delay: 0.35s; }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(26px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .info-card, .contact-form, .showroom-section { opacity: 1; transform: none; animation: none; }
+    .info-card:hover .info-icon { animation: none; }
+  }
+
+  /* ---- Toast ---- */
+  .contact-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: #445962;
+    color: #fff;
+    padding: 14px 26px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  .contact-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 768px) {
+    .contact-container { flex-direction: column; gap: 30px; }
+    .contact-page { gap: 60px; padding: 50px 16px 80px; }
+  }

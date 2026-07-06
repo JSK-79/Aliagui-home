@@ -1,350 +1,227 @@
-/* ============================================================
-   COLLECTIONS.CSS - Styles spécifiques à la page collections
-   ============================================================ */
+  :root{
+    --rust:#b6603f;
+    --rust-dark:#9a4d31;
+    --cream:#faf3ea;
+    --peach:#f6ead9;
+    --navy:#3d5273;
+    --navy-dark:#26364c;
+    --ink:#2c2118;
+    --ink-soft:#6b5d51;
+    --line:#e3d7c8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Playfair display', sans-serif;
+    color:var(--ink);
+    background:#fff;
+    overflow-x:hidden;
+    width:100%;
+  }
+  
+  img{ max-width:100%; display:block; }
+  h1,h2,h3{ font-family:'Playfair Display', serif; margin:0; }
+  p{ line-height:1.7; color:var(--ink-soft); }
+  button{ font-family:inherit; }
 
-/* ============================================================
-   HERO COLLECTIONS - IMAGE À GAUCHE / TEXTE À DROITE
-   ============================================================ */
-.hero-collections {
-    background: var(--cream);
-    padding: 50px 32px 40px;
-    border-bottom: 1px solid var(--line);
-}
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+  .reveal-scale{ opacity:0; transform:scale(.94); transition:opacity .9s ease, transform .9s ease; }
+  .reveal-scale.is-visible{ opacity:1; transform:scale(1); }
+  .stagger.is-visible .stagger-item{ opacity:1; transform:translateY(0); }
+  .stagger-item{ opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+  .stagger-item:nth-child(1){transition-delay:.04s;}
+  .stagger-item:nth-child(2){transition-delay:.12s;}
+  .stagger-item:nth-child(3){transition-delay:.20s;}
+  .stagger-item:nth-child(4){transition-delay:.28s;}
+  .stagger-item:nth-child(5){transition-delay:.36s;}
+  .stagger-item:nth-child(6){transition-delay:.44s;}
 
-.hero-collections .hero-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
+  /* ---------- Intro : visuels + texte ---------- */
+  .collections-intro{
+    width:100%;
+    padding:70px 6vw 50px;
+    display:flex;
+    gap:5vw;
+    align-items:stretch;
+  }
+  
+  /* Grande image à gauche */
+  .ci-left{
+    flex:1;
+    display:flex;
+  }
+  .ci-big{
+    width:100%;
+    aspect-ratio:3/4;
+    border-radius:16px;
+    overflow:hidden;
+    background:var(--peach);
+  }
 
-/* Colonne gauche : Image (grande) */
-.hero-collections .hero-image {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 24px 48px -18px rgba(43, 36, 32, 0.3);
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, #C9BBA5, #9C8570);
-    min-height: 350px;
-}
+  /* Colonne de droite : Contient le texte EN HAUT et les deux images EN BAS */
+  .ci-right-col{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:50px;
+    justify-content:space-between;
+  }
 
-.hero-collections .hero-image .image-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    color: rgba(255,255,255,0.6);
-    font-style: italic;
-}
+  /* Zone de texte centrée au milieu */
+  .ci-text{ 
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center; /* Centre verticalement le texte dans son espace disponible */
+    align-items:center;    /* Centre horizontalement le texte */
+    text-align:center;
+    width:100%;
+  }
+  .ci-text h2{ font-size:clamp(22px,2.6vw,30px); line-height:1.35; margin-bottom:20px; }
+  .ci-sub{ font-size:14px; color:var(--rust); font-weight:500; margin-bottom:14px; }
+  .ci-text p:not(.ci-sub){ font-size:14.5px; max-width:420px; }
 
-.hero-collections .hero-image .badge {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(4px);
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    font-style: italic;
-    color: var(--terracotta-dark);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
+  /* Les deux petites images côte à côte sous le texte */
+  .ci-row{
+    display:flex;
+    gap:18px;
+    width:100%;
+  }
+  .ci-small{
+    flex:1;
+    aspect-ratio:1/1.1;
+    border-radius:14px;
+    overflow:hidden;
+    background:var(--peach);
+  }
 
-/* Colonne droite : Texte */
-.hero-collections .hero-text {
-    text-align: left;
-}
+  .ci-big img, .ci-small img{
+    width:100%; height:100%; object-fit:cover;
+    filter:saturate(.75) sepia(.12);
+    transition:transform .8s ease;
+  }
+  .ci-big:hover img, .ci-small:hover img{ transform:scale(1.07); }
 
-.hero-collections .logo-mark {
-    display: inline-block;
-    margin-bottom: 14px;
-}
+  /* ---------- Collections heading ---------- */
+  .collections-section{ width:100%; padding:50px 6vw 80px; }
+  .section-title{ text-align:center; font-size:32px; margin-bottom:50px; }
 
-.hero-collections .logo-mark svg {
-    width: 65px;
-    height: 65px;
-}
+  /* ---------- Carousel ---------- */
+  .carousel{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .car-track{
+    flex:1;
+    display:flex;
+    gap:24px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    padding-bottom:6px;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+  }
+  .car-track::-webkit-scrollbar{ display:none; }
 
-.hero-collections .hero-text .eyebrow {
-    font-size: 0.78rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    margin-bottom: 10px;
-    display: inline-block;
-    font-family: 'Jost', sans-serif;
-}
+  .car-card{
+    flex:0 0 calc((100% - 48px)/3);
+    scroll-snap-align:start;
+    border-radius:14px;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid var(--line);
+    transition:transform .4s ease;
+  }
+  .car-card:hover{ transform:translateY(-8px); }
+  .car-photo{ width:100%; aspect-ratio:4/3; overflow:hidden; }
+  .car-photo img{ width:100%; height:100%; object-fit:cover; filter:saturate(.8) sepia(.1); transition:transform .7s ease; }
+  .car-card:hover .car-photo img{ transform:scale(1.09); }
 
-.hero-collections .hero-text h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 10px;
-    line-height: 1.15;
-}
+  .car-foot{
+    background:var(--rust);
+    padding:16px 18px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center; /* Centre le contenu horizontalement (le label et le bouton) */
+    justify-content:center;
+    gap:12px;
+    text-align:center;
+  }
+  .car-label{
+    color:#fbe9df;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .car-btn{
+    background:#fff;
+    color:var(--ink);
+    border:none;
+    padding:9px 24px;
+    border-radius:24px;
+    font-size:11.5px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .3s ease, color .3s ease, transform .3s ease;
+  }
+  .car-btn:hover{ background:var(--navy-dark); color:#fff; transform:scale(1.03); }
 
-.hero-collections .hero-text .subtitle {
-    color: var(--terracotta);
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    font-family: 'Jost', sans-serif;
-}
+  .car-arrow{
+    flex:0 0 auto;
+    width:40px; height:40px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--ink);
+    font-size:18px;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    transition:background .3s ease, color .3s ease, transform .2s ease;
+  }
+  .car-arrow:hover{ background:var(--navy-dark); color:#fff; }
+  .car-arrow:active{ transform:scale(.92); }
 
-.hero-collections .hero-text p {
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.8;
-    font-family: 'Jost', sans-serif;
-    max-width: 520px;
-}
+  .car-dots{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-top:34px;
+  }
+  .car-dot{
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--line);
+    border:none;
+    padding:0;
+    cursor:pointer;
+    transition:background .3s ease, transform .3s ease;
+  }
+  .car-dot.active{ background:var(--rust); transform:scale(1.3); }
 
-/* ============================================================
-   2 PETITS CARREAUX SOUS LE TEXTE
-   ============================================================ */
-.hero-collections .mini-carreaux {
-    display: flex;
-    gap: 16px;
-    margin-top: 20px;
-}
+  /* ---------- Responsive Intermédiaire et Mobile ---------- */
+  @media (max-width:900px){
+    .collections-intro{ flex-direction:column; gap:40px; }
+    .ci-left{ width:100%; }
+    .ci-right-col{ width:100%; gap:40px; }
+    .car-card{ flex:0 0 calc((100% - 24px)/2); }
+  }
+  @media (max-width:560px){
+    .ci-row{ flex-direction:column; }
+    .ci-big{ aspect-ratio:4/3; }
+    .ci-small{ aspect-ratio:1/1; }
+    .car-card{ flex:0 0 100%; }
+    .car-arrow{ display:none; }
+  }
 
-.hero-collections .mini-carreaux .carreau {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    border: 2px solid var(--line);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    cursor: pointer;
-}
-
-.hero-collections .mini-carreaux .carreau:hover {
-    transform: scale(1.05);
-    border-color: var(--terracotta);
-}
-
-.hero-collections .mini-carreaux .carreau.c1 {
-    background: linear-gradient(135deg, #C9BBA5, #9C8570);
-}
-
-.hero-collections .mini-carreaux .carreau.c2 {
-    background: linear-gradient(135deg, #8B7358, #5F4E3D);
-}
-
-/* ============================================================
-   COLLECTIONS - 2 GRANDES CARTES EN BAS
-   ============================================================ */
-.collections-grid-section {
-    padding: 50px 20px 70px;
-    background: var(--cream-2);
-}
-
-.collections-grid-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.collections-grid-section .section-label {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.collections-grid-section .section-label h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3vw, 2.6rem);
-    font-weight: 600;
-    color: var(--ink);
-    position: relative;
-    display: inline-block;
-}
-
-.collections-grid-section .section-label h2::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--terracotta);
-}
-
-.collection-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-}
-
-.collection-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 30px rgba(43, 36, 32, 0.06);
-    border: 1px solid var(--line);
-}
-
-.collection-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(43, 36, 32, 0.14);
-    border-color: var(--terracotta);
-}
-
-/* Images avec fonds de couleur */
-.collection-card .card-image {
-    width: 100%;
-    height: 280px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    color: rgba(255,255,255,0.5);
-    font-style: italic;
-}
-
-.collection-card .card-image.c1 {
-    background: linear-gradient(135deg, #C9BBA5, #9C8570);
-}
-
-.collection-card .card-image.c2 {
-    background: linear-gradient(135deg, #8B7358, #5F4E3D);
-}
-
-.collection-card .card-image .icon-bg {
-    font-size: 4rem;
-    opacity: 0.3;
-    color: rgba(255,255,255,0.4);
-}
-
-.collection-card .card-badge {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(4px);
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--terracotta-dark);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-}
-
-.collection-card .card-badge i {
-    margin-right: 8px;
-    font-size: 0.7rem;
-}
-
-.collection-card .content {
-    padding: 28px 30px 30px;
-}
-
-.collection-card .content .sous-titre {
-    color: var(--taupe);
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-family: 'Jost', sans-serif;
-}
-
-.collection-card .content h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--ink);
-    margin: 4px 0 6px;
-}
-
-.collection-card .content .prix {
-    font-weight: 600;
-    color: var(--terracotta);
-    font-size: 1.4rem;
-    margin: 8px 0 10px;
-    font-family: 'Jost', sans-serif;
-}
-
-.collection-card .content .description {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-bottom: 18px;
-    line-height: 1.7;
-    font-family: 'Jost', sans-serif;
-}
-
-.collection-card .btn-detail {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--terracotta);
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    font-family: 'Jost', sans-serif;
-    letter-spacing: 0.03em;
-    transition: all 0.3s ease;
-    border-bottom: 1.5px solid transparent;
-    padding-bottom: 4px;
-}
-
-.collection-card .btn-detail:hover {
-    border-bottom-color: var(--terracotta);
-    gap: 16px;
-}
-
-.collection-card .btn-detail i {
-    font-size: 0.75rem;
-    transition: transform 0.3s ease;
-}
-
-.collection-card .btn-detail:hover i {
-    transform: translateX(6px);
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 992px) {
-    .hero-collections .hero-inner { gap: 40px; }
-    .collection-grid { gap: 30px; }
-    .collection-card .card-image { height: 220px; }
-}
-
-@media (max-width: 768px) {
-    .hero-collections { padding: 35px 20px 30px; }
-    .hero-collections .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .hero-collections .hero-text { text-align: center; }
-    .hero-collections .hero-text p { max-width: 100%; }
-    .hero-collections .hero-image { min-height: 250px; }
-    .hero-collections .mini-carreaux { justify-content: center; }
-    .collection-grid { grid-template-columns: 1fr; gap: 24px; }
-    .collection-card .card-image { height: 200px; }
-    .collection-card .content h3 { font-size: 1.4rem; }
-}
-
-@media (max-width: 480px) {
-    .hero-collections .hero-text h1 { font-size: 1.6rem; }
-    .hero-collections .hero-text .subtitle { font-size: 0.8rem; }
-    .hero-collections .mini-carreaux .carreau { width: 60px; height: 60px; }
-    .collection-card .card-image { height: 160px; }
-    .collection-card .content { padding: 20px; }
-    .collection-card .content h3 { font-size: 1.2rem; }
-    .collection-card .content .prix { font-size: 1.1rem; }
-}
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    .reveal, .reveal-scale, .stagger-item{ opacity:1; transform:none; }
+  }
