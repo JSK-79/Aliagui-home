@@ -1,408 +1,271 @@
 /* ==========================================================================
-   PAGE DÉTAIL PRODUIT (FLEXBOX & LAYOUT)
+   VARIABLES DE MARQUE
    ========================================================================== */
+:root{
+  --cream:#faf5ee;
+  --cream-2:#f3e9dd;
+  --taupe:#8b7263;
+  --ink:#2b241f;
+  --muted:#7c7267;
+  --line:#e6ddd0;
+  --terracotta:#c1633d;
+  --navy:#2c3a52;
+  --radius:8px;
 
-.product-detail-page{
-    max-width:1200px;
-    margin:0 auto;
-    padding:40px 30px 80px;
-}
+  /* ---- Échelle d'espacement (rythme vertical & horizontal cohérent) ---- */
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --space-12:48px;
+  --space-16:64px;
+  --space-20:80px;
+  --space-24:96px;
+  --space-28:112px;
 
-/* ----- 1. Retour aux collections ----- */
-.back-nav{
-    margin-bottom:24px;
+  /* Paddings horizontaux de conteneur, par palier */
+  --pad-x-desktop:40px;
+  --pad-x-tablet:24px;
+  --pad-x-mobile:20px;
 }
-.back-nav a{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    color:var(--muted);
-    font-size:0.9rem;
-    font-weight:500;
-    transition:color 0.25s ease;
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Jost',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
 }
-.back-nav a:hover{
-    color:var(--terracotta);
-}
+h1,h2,h3,h4{ font-family:'Cormorant Garamond', serif; font-weight:600; }
+a{ text-decoration:none; color:inherit; }
+img{ max-width:100%; display:block; }
+button{ font-family:inherit; border:none; background:none; cursor:pointer; }
 
-/* ----- 2. Section principale produit ----- */
-.product-main-section{
-    display:flex;
-    gap:60px;
-    align-items:flex-start;
-    margin-bottom:80px;
-}
-
-/* Colonne gauche : galerie */
-.product-gallery{
-    flex:1;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-.image-placeholder{
-    width:100%;
-    height:500px;
-    background:var(--cream-2);
-    border:1px dashed var(--line);
-    border-radius:8px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--taupe);
-    font-size:1.2rem;
-}
-.slider-btn{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:#fff;
-    box-shadow:0 4px 12px rgba(0,0,0,0.12);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--ink);
-    z-index:2;
-    transition:background 0.25s ease, color 0.25s ease;
-}
-.slider-btn:hover{
-    background:var(--terracotta);
-    color:#fff;
-}
-.prev-btn{left:14px;}
-.next-btn{right:14px;}
-
-/* Colonne droite : infos produit */
-.product-info-summary{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
-.product-title{
-    font-size:2.4rem;
-    color:var(--ink);
-    margin:0;
-}
-.product-subtitle{
-    font-size:1.1rem;
-    font-weight:400;
-    color:var(--muted);
-    margin:0 0 6px;
-}
-.product-description p{
-    line-height:1.7;
-    color:var(--muted);
-    font-size:1rem;
-    margin-bottom:10px;
-}
-.product-actions{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    margin-top:10px;
-}
-.btn-action{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    padding:16px 24px;
-    border-radius:6px;
-    font-size:0.95rem;
-    font-weight:600;
-    letter-spacing:0.03em;
-    text-align:center;
-    transition:transform 0.2s ease, opacity 0.25s ease;
-}
-.btn-action:hover{
-    transform:translateY(-2px);
-    opacity:0.92;
-}
-.btn-blue-whatsapp{
-    background:var(--navy);
-    color:#fff;
-}
-.btn-terracotta-contact{
-    background:var(--terracotta);
-    color:#fff;
-}
-
-/* ----- 3. Vous aimerez aussi ----- */
-.suggestions-section{
-    text-align:center;
-    margin-bottom:80px;
-}
-.section-title-centered{
-    font-size:1.8rem;
-    margin-bottom:36px;
-}
-.suggestions-grid{
-    display:flex;
-    gap:28px;
-    flex-wrap:wrap;
-    text-align:left;
-}
-.suggestion-card{
-    flex:1 1 280px;
-    background:#fff;
-    border-radius:8px;
-    overflow:hidden;
-    box-shadow:0 4px 14px rgba(0,0,0,0.06);
-}
-.card-img-placeholder{
-    width:100%;
-    height:220px;
-    background:var(--taupe);
-}
-.card-footer{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:16px 18px;
-    font-size:0.9rem;
-}
-.card-footer span{
-    font-weight:600;
-    letter-spacing:0.02em;
-}
-.card-footer a{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    color:var(--terracotta);
-    font-weight:600;
-    font-size:0.85rem;
-}
-.carousel-pagination{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:14px;
-    margin-top:32px;
-    color:var(--muted);
-}
-.dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--line);
-    display:inline-block;
-}
-.dot.active{
-    background:var(--terracotta);
-}
-
-/* ----- 4. Avis clients ----- */
-.reviews-section{
-    margin-bottom:80px;
-}
-.reviews-title{
-    font-size:1.8rem;
-    margin-bottom:32px;
-    text-align:center;
-}
-.reviews-dashboard{
-    display:flex;
-    gap:50px;
-    align-items:flex-start;
-    margin-bottom:50px;
-}
-.global-rating-box{
-    display:flex;
-    align-items:center;
-    gap:20px;
-    flex:0 0 260px;
-}
-.rating-square{
-    width:70px;
-    height:70px;
-    border-radius:8px;
-    background:var(--taupe);
-    flex-shrink:0;
-}
-.rating-score h3{
-    font-size:2rem;
-    margin:0 0 4px;
-}
-.stars, .mini-stars{
-    color:var(--terracotta);
-    font-size:0.9rem;
-}
-.rating-score span{
-    display:block;
-    font-size:0.85rem;
-    color:var(--muted);
-    margin:4px 0;
-}
-.rating-score p{
-    font-size:0.8rem;
-    color:var(--muted);
-    max-width:220px;
-}
-.rating-bars{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-.bar-row{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-size:0.85rem;
-    color:var(--muted);
-}
-.bar-row span:first-child{
-    flex:0 0 40px;
-}
-.bar-row span:last-child{
-    flex:0 0 40px;
-    text-align:right;
-}
-.progress-bar{
-    flex:1;
-    height:8px;
-    background:var(--line);
-    border-radius:4px;
-    overflow:hidden;
-}
-.progress{
-    height:100%;
-    background:var(--terracotta);
-    border-radius:4px;
-}
-.criteria-ratings{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-.criteria-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    font-size:0.9rem;
-}
-.criteria-row hr{
-    border:none;
-}
-.recommendation-text{
-    font-size:0.9rem;
-    color:var(--muted);
-    margin-top:6px;
-}
-.comments-grid{
-    display:flex;
-    gap:26px;
-    flex-wrap:wrap;
-}
-.comment-card{
-    flex:1 1 280px;
-    background:var(--taupe);
-    color:#fff;
-    border-radius:8px;
-    padding:26px 22px;
-}
-.comment-card .comment-stars{
-    color:#fff;
-}
-.comment-card h4{
-    margin:10px 0 8px;
-    font-size:1rem;
-    color:#fff;
-}
-.comment-card p{
-    font-size:0.9rem;
-    color:rgba(255,255,255,0.9);
-    line-height:1.5;
-}
-.text-center{
-    text-align:center;
-}
-
-/* ----- 5. Barre d'avantages ----- */
-.advantages-bar{
-    display:flex;
-    flex-wrap:wrap;
-    gap:0;
-    justify-content:space-between;
-    padding:40px 30px;
-    background:#fff;
-    max-width:1200px;
-    margin:0 auto 40px;
-}
-.advantage-item{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:10px;
-    flex:1 1 200px;
-    padding:0 20px;
-    border-right:1px solid var(--line);
-}
-.advantage-item:last-child{
-    border-right:none;
-}
-.advantage-item i{
-    font-size:1.6rem;
-    color:var(--terracotta);
-}
-.advantage-item h4{
-    font-size:0.9rem;
-    margin:0 0 4px;
-}
-.advantage-item p{
-    font-size:0.8rem;
-    color:var(--muted);
-    margin:0;
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
 }
 
 /* ==========================================================================
-   RESPONSIVE (MOBILE & TABLETTE)
+   PAGE DÉTAIL PRODUIT
    ========================================================================== */
-@media (max-width: 900px){
-    .product-main-section{
-        flex-direction:column;
-        gap:36px;
-    }
-    .reviews-dashboard{
-        flex-direction:column;
-        gap:30px;
-    }
-    .global-rating-box{
-        flex:1 1 auto;
-    }
+.product-detail-page{
+  max-width:1200px;
+  margin:0 auto;
+  padding:var(--space-12) var(--pad-x-desktop) 0;
+}
+.reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in-view{ opacity:1; transform:translateY(0); }
+
+/* ----- 1. Retour aux collections ----- */
+.back-nav{ margin-bottom:var(--space-6); }
+.back-nav a{
+  display:inline-flex; align-items:center; gap:var(--space-2);
+  color:var(--muted); font-size:0.9rem; font-weight:500;
+  transition:color .25s ease, gap .25s ease;
+}
+.back-nav a:hover{ color:var(--terracotta); gap:12px; }
+
+/* ----- 2. Section principale produit ----- */
+.product-main-section{
+  display:flex;
+  gap:var(--space-20);
+  align-items:flex-start;
+  margin-bottom:var(--space-28);
 }
 
-@media (max-width: 768px) {
-    .product-detail-page{
-        padding:24px 20px 60px;
-    }
-    .image-placeholder{
-        height:340px;
-    }
-    .product-title{
-        font-size:1.9rem;
-    }
-    .suggestions-grid,
-    .comments-grid{
-        flex-direction:column;
-    }
-    .advantages-bar{
-        flex-direction:column;
-    }
-    .advantage-item{
-        border-right:none;
-        border-bottom:1px solid var(--line);
-        padding-bottom:20px;
-    }
-    .advantage-item:last-child{
-        border-bottom:none;
-    }
+/* Colonne gauche : galerie */
+.product-gallery{ flex:1; display:flex; flex-direction:column; gap:var(--space-4); min-width:0; }
+.gallery-main{ position:relative; display:flex; align-items:center; justify-content:center; }
+.main-image-wrap{
+  width:100%; height:500px; border-radius:var(--radius); overflow:hidden;
+  background:var(--cream-2); border:1px solid var(--line);
+}
+.main-image-wrap img{
+  width:100%; height:100%; object-fit:cover;
+  opacity:0; transform:scale(1.02);
+  animation:imgIn .5s ease forwards;
+}
+@keyframes imgIn{ to{ opacity:1; transform:scale(1); } }
+
+.slider-btn{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:42px; height:42px; border-radius:50%;
+  background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.14);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--ink); z-index:2;
+  transition:background .25s ease, color .25s ease, transform .2s ease;
+}
+.slider-btn:hover{ background:var(--terracotta); color:#fff; transform:translateY(-50%) scale(1.08); }
+.slider-btn:active{ transform:translateY(-50%) scale(.96); }
+.prev-btn{ left:var(--space-4); }
+.next-btn{ right:var(--space-4); }
+
+.thumbnail-row{ display:flex; gap:var(--space-4); }
+.thumb{
+  flex:1; aspect-ratio:1/1; border-radius:6px; overflow:hidden; cursor:pointer;
+  border:2px solid transparent; opacity:.65;
+  transition:opacity .25s ease, border-color .25s ease, transform .2s ease;
+}
+.thumb img{ width:100%; height:100%; object-fit:cover; }
+.thumb:hover{ opacity:1; transform:translateY(-2px); }
+.thumb.active{ opacity:1; border-color:var(--terracotta); }
+
+/* Colonne droite : infos produit */
+.product-info-summary{ flex:1; display:flex; flex-direction:column; gap:var(--space-4); min-width:0; }
+.product-title{ font-size:2.5rem; color:var(--ink); margin:0; }
+.product-subtitle{ font-size:1.1rem; font-weight:400; color:var(--muted); margin:0 0 var(--space-1); }
+.product-description p{ line-height:1.75; color:var(--muted); font-size:1rem; margin:0 0 var(--space-3); }
+.product-price{ font-family:'Cormorant Garamond',serif; font-size:1.7rem; color:var(--terracotta); font-weight:600; margin:var(--space-1) 0 var(--space-2); }
+
+.product-actions{ display:flex; flex-direction:column; gap:var(--space-4); margin-top:var(--space-4); }
+.btn-action{
+  display:flex; align-items:center; justify-content:center; gap:var(--space-3);
+  padding:var(--space-4) var(--space-6); border-radius:6px; font-size:0.95rem; font-weight:600;
+  letter-spacing:0.03em; text-align:center;
+  transition:transform 0.2s ease, opacity 0.25s ease, box-shadow .25s ease;
+}
+.btn-action:hover{ transform:translateY(-2px); opacity:0.92; box-shadow:0 8px 20px rgba(0,0,0,.12); }
+.btn-action:active{ transform:translateY(0); }
+.btn-blue-whatsapp{ background:var(--navy); color:#fff; }
+.btn-terracotta-contact{ background:var(--terracotta); color:#fff; }
+
+/* ----- Sections pleine largeur (fond bord-à-bord, contenu centré) ----- */
+.full-bleed{ width:100%; }
+.full-bleed > .container{ max-width:1200px; margin:0 auto; padding:var(--space-28) var(--pad-x-desktop); }
+.bg-cream2{ background:var(--cream-2); }
+
+/* ----- 3. Vous aimerez aussi ----- */
+.suggestions-section{ text-align:center; background-color: #faf5ee;}
+.section-title-centered{ font-size:1.9rem; margin:0 0 var(--space-10); }
+.suggestions-track{
+  display:flex; gap:var(--space-10); overflow-x:auto; scroll-behavior:smooth;
+  scroll-snap-type:x mandatory; padding-bottom:var(--space-2); text-align:left;
+  scrollbar-width:none;
+}
+.suggestions-track::-webkit-scrollbar{ display:none; }
+.suggestion-card{
+  flex:0 0 calc((100% - 80px)/3); min-width:240px;
+  scroll-snap-align:start;
+  background:#faf5ee; border-radius:var(--radius); overflow:hidden;
+  box-shadow:0 4px 14px rgba(0,0,0,0.06);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.suggestion-card:hover{ transform:translateY(-6px); box-shadow:0 14px 28px rgba(0,0,0,.12); }
+.card-img-placeholder{ width:100%; height:220px; overflow:hidden; }
+.card-img-placeholder img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+.suggestion-card:hover .card-img-placeholder img{ transform:scale(1.08); }
+.card-footer{ display:flex; align-items:center; justify-content:space-between; padding:var(--space-4) var(--space-5); font-size:0.9rem; }
+.card-footer span{ font-weight:600; letter-spacing:0.02em; }
+.card-footer a{ display:inline-flex; align-items:center; gap:var(--space-2); color:var(--terracotta); font-weight:600; font-size:0.85rem; transition:gap .2s ease; }
+.card-footer a:hover{ gap:10px; }
+
+.carousel-pagination{ display:flex; align-items:center; justify-content:center; gap:var(--space-4); margin-top:var(--space-8); color:var(--muted); }
+.carousel-pagination i{ cursor:pointer; transition:color .2s ease; padding:6px; }
+.carousel-pagination i:hover{ color:var(--terracotta); }
+.dot{ width:8px; height:8px; border-radius:50%; background:var(--line); display:inline-block; cursor:pointer; transition:background .2s ease, transform .2s ease; }
+.dot:hover{ transform:scale(1.2); }
+.dot.active{ background:var(--terracotta); }
+
+/* ----- 4. Avis clients ----- */
+
+.reviews-title{ font-size:1.9rem; margin:0 0 var(--space-10); text-align:center; }
+.reviews-dashboard{ display:flex; gap:var(--space-16); align-items:flex-start; margin-bottom:var(--space-16); }
+.global-rating-box{ display:flex; align-items:center; gap:var(--space-6); flex:0 0 260px; }
+.rating-square{ width:70px; height:70px; border-radius:8px; background:var(--taupe); flex-shrink:0; }
+.rating-score h3{ font-size:2.1rem; margin:0 0 var(--space-1); }
+.stars, .mini-stars{ color:var(--terracotta); font-size:0.9rem; }
+.rating-score span{ display:block; font-size:0.85rem; color:var(--muted); margin:var(--space-1) 0; }
+.rating-score p{ font-size:0.8rem; color:var(--muted); max-width:220px; }
+.rating-bars{ flex:1; display:flex; flex-direction:column; gap:var(--space-3); }
+.bar-row{ display:flex; align-items:center; gap:var(--space-3); font-size:0.85rem; color:var(--muted); }
+.bar-row span:first-child{ flex:0 0 40px; }
+.bar-row span:last-child{ flex:0 0 40px; text-align:right; }
+.progress-bar{ flex:1; height:8px; background:var(--line); border-radius:4px; overflow:hidden; }
+.progress{ height:100%; background:var(--terracotta); border-radius:4px; width:0; transition:width 1s ease; }
+.criteria-ratings{ flex:1; display:flex; flex-direction:column; gap:var(--space-4); }
+.criteria-row{ display:flex; align-items:center; justify-content:space-between; font-size:0.9rem; }
+.criteria-row hr{ border:none; }
+.recommendation-text{ font-size:0.9rem; color:var(--muted); margin-top:var(--space-2); }
+.comments-grid{ display:flex; gap:var(--space-10); flex-wrap:wrap; }
+.comment-card{ flex:1 1 280px; background:var(--terracotta); color:#fff; border-radius:8px; padding:var(--space-6) var(--space-5); transition:transform .3s ease; }
+.comment-card:hover{ transform:translateY(-4px); }
+.comment-card .comment-stars{ color:#fff; }
+.comment-card h4{ margin:var(--space-3) 0 var(--space-2); font-size:1rem; color:#fff; }
+.comment-card p{ font-size:0.9rem; color:rgba(255,255,255,0.9); line-height:1.5; }
+.text-center{ text-align:center; }
+
+/* ===== FEATURES ===== */
+  .features{
+    background:#faf5ee;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:32px 42px;
+  }
+  .features-grid{
+    max-width:1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    text-align:center;
+  }
+  .feature{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1px;
+  }
+  .feature svg{
+    width:30px;
+    height:30px;
+    color:var(--terracotta);
+    transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+  .feature:hover svg{transform:translateY(-4px);}
+  .feature h4{font-size:0.9rem; font-weight:500;}
+  .feature p{font-size:0.8rem; color:var(--muted);}
+
+.toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+.toast{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%) translateY(30px);
+    background:#2b241f;
+    color:white;
+    padding:12px 20px;
+    border-radius:6px;
+    opacity:0;
+    transition:.3s;
+    z-index:999;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 900px){
+  .product-main-section{ flex-direction:column; gap:var(--space-8); }
+  .reviews-dashboard{ flex-direction:column; gap:var(--space-8); }
+  .global-rating-box{ flex:1 1 auto; }
+  .suggestion-card{ flex:0 0 calc((100% - 32px)/2); }
+}
+@media (max-width: 768px){
+  .product-detail-page{ padding:var(--space-6) var(--pad-x-mobile) 0; }
+  .main-image-wrap{ height:340px; }
+  .product-title{ font-size:1.9rem; }
+  .full-bleed > .container{ padding:var(--space-12) var(--pad-x-mobile); }
+  .comments-grid{ flex-direction:column; gap:var(--space-6); }
+  .advantages-bar{ flex-direction:column; gap:var(--space-5); }
+  .advantage-item{ border-right:none; border-bottom:1px solid var(--line); padding-bottom:var(--space-5); }
+  .advantage-item:last-child{ border-bottom:none; }
+  .suggestion-card{ flex:0 0 78%; }
+  /* Sur mobile, un seul contrôle de navigation en bas à gauche de l'image,
+     comme dans la maquette (au lieu des deux flèches gauche/droite centrées) */
+  .slider-btn{ top:auto; bottom:14px; transform:none; width:36px; height:36px; }
+  .prev-btn{ left:var(--space-4); }
+  .next-btn{ left:58px; right:auto; }
 }

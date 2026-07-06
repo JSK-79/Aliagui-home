@@ -82,46 +82,77 @@
       </div>
     </header>
     <main class="product-detail-page">
-      <!-- 1. RETOUR AUX COLLECTIONS -->
       <div class="back-nav">
         <a href="#"
           ><i class="fa-solid fa-arrow-left"></i> Retour aux collections</a
         >
       </div>
 
-      <!-- 2. SECTION PRINCIPALE PRODUIT -->
-      <section class="product-main-section">
-        <!-- Colonne Gauche : Galerie / Slider d'images -->
+      <section class="product-main-section reveal">
         <div class="product-gallery">
-          <button class="slider-btn prev-btn">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <div class="image-placeholder">
-            <!-- L'image du produit ira ici -->
-            <span>...</span>
+          <div class="gallery-main">
+            <button
+              class="slider-btn prev-btn"
+              id="prevBtn"
+              aria-label="Image précédente"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="main-image-wrap">
+              <img id="mainImage" src="" alt="Parure de lit Aliagui Home" />
+            </div>
+            <button
+              class="slider-btn next-btn"
+              id="nextBtn"
+              aria-label="Image suivante"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
           </div>
-          <button class="slider-btn next-btn">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
+          <div class="thumbnail-row" id="thumbnailRow"></div>
         </div>
 
-        <!-- Colonne Droite : Infos produit -->
         <div class="product-info-summary">
-          <h1 class="product-title">Nom</h1>
-          <h2 class="product-subtitle">Sous titre</h2>
+          <h1 class="product-title" id="productTitle">
+            Parure de lit Wax Royal
+          </h1>
+          <h2 class="product-subtitle">
+            Coton égyptien, motif imprimé africain
+          </h2>
+          <p class="product-price">29 900 FCFA</p>
 
           <div class="product-description">
-            <p>voc,fjdkjdjzidsd[zoijfhhdjk</p>
-            <p>dsDJFDJFJJDIJSjdjjjjjjjjj</p>
-            <p>JJJJJJJJJJJJJJJJJJJJJJJJJ</p>
-            <p>JJJJJJJJJJJJJJJJJJJJJJJJJ</p>
+            <p>
+              Une parure de lit qui marie l'élégance intemporelle du coton
+              égyptien à la force graphique des imprimés africains. Chaque pièce
+              est confectionnée à la main dans notre atelier.
+            </p>
+            <p>
+              Composition : 100% coton peigné, 300 fils/cm². Lavable en machine
+              à 30°C.
+            </p>
+            <p>
+              Disponible en plusieurs tailles : 1 place, 2 places, king size.
+            </p>
           </div>
 
           <div class="product-actions">
-            <a href="#" class="btn-action btn-blue-whatsapp">
+            <a
+              href="#"
+              id="whatsappOrderBtn"
+              class="btn-action btn-blue-whatsapp"
+              target="_blank"
+              rel="noopener"
+            >
               <i class="fa-brands fa-whatsapp"></i> COMMANDER VIA WHATSAPP
             </a>
-            <a href="#" class="btn-action btn-terracotta-contact">
+            <a
+              href="#"
+              id="whatsappAdviceBtn"
+              class="btn-action btn-terracotta-contact"
+              target="_blank"
+              rel="noopener"
+            >
               <i class="fa-solid fa-comments"></i> BESOIN D'UN CONSEIL ?
               CONTACTEZ-NOUS
             </a>
@@ -129,205 +160,216 @@
         </div>
       </section>
 
-      <!-- 3. SECTION SUGGESTIONS "VOUS AIMEREZ AUSSI" -->
-      <section class="suggestions-section">
-        <h2 class="section-title-centered">VOUS AIMEREZ AUSSI</h2>
-
-        <div class="suggestions-grid">
-          <!-- Carte 1 -->
-          <div class="suggestion-card">
-            <div class="card-img-placeholder"></div>
-            <div class="card-footer">
-              <span>NOM DU PRODUIT</span>
-              <a href="#"
-                >Voir les détails <i class="fa-solid fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-          <!-- Carte 2 -->
-          <div class="suggestion-card">
-            <div class="card-img-placeholder"></div>
-            <div class="card-footer">
-              <span>NOM DU PRODUIT</span>
-              <a href="#"
-                >Voir les détails <i class="fa-solid fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-          <!-- Carte 3 -->
-          <div class="suggestion-card">
-            <div class="card-img-placeholder"></div>
-            <div class="card-footer">
-              <span>NOM DU PRODUIT</span>
-              <a href="#"
-                >Voir les détails <i class="fa-solid fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pagination du carrousel -->
-        <div class="carousel-pagination">
-          <i class="fa-solid fa-chevron-left"></i>
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <i class="fa-solid fa-chevron-right"></i>
-        </div>
-      </section>
-
-      <!-- 4. SECTION AVIS CLIENTS -->
-      <section class="reviews-section">
-        <h2 class="reviews-title">Avis client</h2>
-
-        <div class="reviews-dashboard">
-          <!-- Note globale -->
-          <div class="global-rating-box">
-            <div class="rating-square"></div>
-            <div class="rating-score">
-              <h3>4,3</h3>
-              <div class="stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star-half-stroke"></i>
-              </div>
-              <span>(1457)</span>
-              <p>Moyenne de tous les avis dans toutes les langues</p>
-            </div>
-          </div>
-
-          <!-- Barres de répartition -->
-          <div class="rating-bars">
-            <div class="bar-row">
-              <span>5 <i class="fa-solid fa-star"></i></span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 75%"></div>
-              </div>
-              <span>1070</span>
-            </div>
-            <div class="bar-row">
-              <span>4 <i class="fa-solid fa-star"></i></span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 15%"></div>
-              </div>
-              <span>250</span>
-            </div>
-            <div class="bar-row">
-              <span>3 <i class="fa-solid fa-star"></i></span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 5%"></div>
-              </div>
-              <span>50</span>
-            </div>
-            <div class="bar-row">
-              <span>2 <i class="fa-solid fa-star"></i></span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 3%"></div>
-              </div>
-              <span>30</span>
-            </div>
-            <div class="bar-row">
-              <span>1 <i class="fa-solid fa-star"></i></span>
-              <div class="progress-bar">
-                <div class="progress" style="width: 2%"></div>
-              </div>
-              <span>15</span>
-            </div>
-          </div>
-
-          <!-- Critères détaillés -->
-          <div class="criteria-ratings">
-            <div class="criteria-row">
-              <span>Rapport qualité-prix</span>
-              <div class="mini-stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-regular fa-star"></i> 4.0
-              </div>
-            </div>
-            <hr />
-            <div class="criteria-row">
-              <span>Style</span>
-              <div class="mini-stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i> 5.0
-              </div>
-            </div>
-            <hr />
-            <div class="criteria-row">
-              <span>Matière</span>
-              <div class="mini-stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-regular fa-star"></i> 4.0
-              </div>
-            </div>
-            <p class="recommendation-text">
-              <i class="fa-solid fa-thumbs-up"></i> 87% des clients recommandent
-              ce produit
-            </p>
-          </div>
-        </div>
-
-        <!-- Grille des commentaires clients -->
-        <div class="comments-grid">
-          <div class="comment-card text-center">
-            <div class="comment-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <h4>Sophie K.</h4>
-            <p>"J'ai commandé une parure de lit et je suis ravie..."</p>
-          </div>
-          <div class="comment-card text-center">
-            <div class="comment-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </div>
-            <h4>Zana M.</h4>
-            <p>"Une très belle découverte ! Les produits sont de qualité..."</p>
-          </div>
-          <div class="comment-card text-center">
-            <div class="comment-stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </div>
-            <h4>Clara D.</h4>
-            <p>
-              "L'élégance du mélange entre moderne et impression africaine..."
-            </p>
+      <section class="suggestions-section full-bleed bg-cream2 reveal">
+        <div class="container">
+          <h2 class="section-title-centered">VOUS AIMEREZ AUSSI</h2>
+          <div class="suggestions-track" id="suggestionsTrack"></div>
+          <div class="carousel-pagination" id="carouselPagination">
+            <i class="fa-solid fa-chevron-left" id="pagPrev"></i>
+            <span class="dot active" data-page="0"></span>
+            <span class="dot" data-page="1"></span>
+            <span class="dot" data-page="2"></span>
+            <i class="fa-solid fa-chevron-right" id="pagNext"></i>
           </div>
         </div>
       </section>
 
-      <!-- 5. BARRE D'AVANTAGES (FOOTER D'AVANTAGES) -->
-      <section class="advantages-bar">
-        <div class="advantage-item">
-          <i class="fa-solid fa-truck"></i>
-          <div>
+      <section class="reviews-section full-bleed reveal">
+        <div class="container">
+          <h2 class="reviews-title">Avis client</h2>
+          <div class="reviews-dashboard">
+            <div class="global-rating-box">
+              <div class="rating-square"></div>
+              <div class="rating-score">
+                <h3>4,3</h3>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <span>(3457)</span>
+                <p>Moyenne de tous les avis dans toutes les langues</p>
+              </div>
+            </div>
+
+            <div class="rating-bars">
+              <div class="bar-row">
+                <span>5 <i class="fa-solid fa-star"></i></span>
+                <div class="progress-bar">
+                  <div class="progress" data-width="75"></div>
+                </div>
+                <span>2078</span>
+              </div>
+              <div class="bar-row">
+                <span>4 <i class="fa-solid fa-star"></i></span>
+                <div class="progress-bar">
+                  <div class="progress" data-width="25"></div>
+                </div>
+                <span>856</span>
+              </div>
+              <div class="bar-row">
+                <span>3 <i class="fa-solid fa-star"></i></span>
+                <div class="progress-bar">
+                  <div class="progress" data-width="8"></div>
+                </div>
+                <span>256</span>
+              </div>
+              <div class="bar-row">
+                <span>2 <i class="fa-solid fa-star"></i></span>
+                <div class="progress-bar">
+                  <div class="progress" data-width="4"></div>
+                </div>
+                <span>119</span>
+              </div>
+              <div class="bar-row">
+                <span>1 <i class="fa-solid fa-star"></i></span>
+                <div class="progress-bar">
+                  <div class="progress" data-width="5"></div>
+                </div>
+                <span>148</span>
+              </div>
+            </div>
+
+            <div class="criteria-ratings">
+              <div class="criteria-row">
+                <span>Rapport qualité-prix</span>
+                <div class="mini-stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-regular fa-star"></i> 4.3
+                </div>
+              </div>
+              <hr />
+              <div class="criteria-row">
+                <span>Style</span>
+                <div class="mini-stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i> 4.4
+                </div>
+              </div>
+              <hr />
+              <div class="criteria-row">
+                <span>Matière</span>
+                <div class="mini-stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-regular fa-star"></i> 4.3
+                </div>
+              </div>
+              <p class="recommendation-text">
+                <i class="fa-solid fa-thumbs-up"></i> 87% des clients
+                recommandent ce produit
+              </p>
+            </div>
+          </div>
+
+          <div class="comments-grid">
+            <div class="comment-card text-center">
+              <div class="comment-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <h4>Sophie K.</h4>
+              <p>
+                « J'ai commandé une parure de lit et je suis ravie. Les
+                finitions sont impeccables, le tissu est très agréable et les
+                motifs apportent beaucoup de caractère à ma chambre. »
+              </p>
+            </div>
+            <div class="comment-card text-center">
+              <div class="comment-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <h4>Aicha M.</h4>
+              <p>
+                « Une très belle découverte ! Les produits sont de qualité et
+                correspondent parfaitement aux photos. Mon intérieur est
+                beaucoup plus chaleureux grâce aux créations d'Aliagui Home. »
+              </p>
+            </div>
+            <div class="comment-card text-center">
+              <div class="comment-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <h4>Claire D.</h4>
+              <p>
+                « J'apprécie le mélange entre moderne et inspiration africaine.
+                Le service est professionnel, la livraison rapide et le résultat
+                est encore plus beau que ce que j'imaginais. »
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="features-grid">
+          <div class="feature reveal">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <rect x="1" y="7" width="14" height="10" />
+              <path d="M15 10h4l3 3v4h-7z" />
+              <circle cx="6" cy="19" r="1.6" />
+              <circle cx="17.5" cy="19" r="1.6" />
+            </svg>
             <h4>Livraison rapide</h4>
-            <p>Partout en CI en 24h-48h</p>
+            <p>Partout en Côte d'Ivoire</p>
           </div>
-        </div>
-        <div class="advantage-item">
-          <i class="fa-solid fa-award"></i>
-          <div>
+          <div class="feature reveal reveal-delay-1">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <circle cx="12" cy="8" r="5" />
+              <path d="M8.5 12.5L7 22l5-3 5 3-1.5-9.5" />
+            </svg>
             <h4>Qualité</h4>
-            <p>Tissus durablement sélectionnés</p>
+            <p>Tissus durables et agréables</p>
           </div>
-        </div>
-        <div class="advantage-item">
-          <i class="fa-solid fa-star"></i>
-          <div>
-            <h4>Meilleur rapport qualité-prix</h4>
+          <div class="feature reveal reveal-delay-2">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path
+                d="M12 2l2.9 6.3L22 9l-5 4.9L18.2 21 12 17.6 5.8 21 7 13.9 2 9l7.1-.7z"
+              />
+            </svg>
+            <h4>Finitions haut de gamme</h4>
             <p>Confection artisanale</p>
           </div>
-        </div>
-        <div class="advantage-item">
-          <i class="fa-solid fa-phone-volume"></i>
-          <div>
+          <div class="feature reveal reveal-delay-3">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path
+                d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.78 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm5.8 14.1c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.42.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.32.02.51-.1.2-.15.32-.3.5-.14.17-.3.38-.43.51-.14.14-.29.29-.13.57.17.28.75 1.24 1.61 2 1.11.99 2.04 1.3 2.32 1.44.28.14.44.12.6-.07.17-.2.72-.84.91-1.13.19-.28.38-.24.64-.14.26.09 1.66.78 1.94.93.28.14.47.21.53.33.07.12.07.68-.17 1.36z"
+              />
+            </svg>
             <h4>Commande facile</h4>
             <p>Via WhatsApp</p>
           </div>
@@ -507,5 +549,6 @@
     <div class="toast" id="toast"></div>
 
     <script src="java.js"></script>
+    <script src="detail.js"></script>
   </body>
 </html>
