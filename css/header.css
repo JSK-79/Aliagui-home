@@ -36,6 +36,11 @@
     color:var(--cream);
     letter-spacing:0.02em;
   }
+  .logo img{
+    height: 55px ;
+    width:auto ;
+    display:block;
+}
   nav a{
     font-size:0.82rem;
     letter-spacing:0.12em;
@@ -160,3 +165,6 @@
     header.scrolled .header-inner{padding:10px 20px;}
     .logo{font-size:1.4rem;}
   }
+  
+
+  

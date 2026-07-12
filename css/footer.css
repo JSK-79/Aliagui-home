@@ -1,9 +1,4 @@
-/* ==========================================================================
-   FOOTER.CSS — Pied de page (colonnes, réseaux sociaux, newsletter, copyright)
-   Importé sur TOUTES les pages.
-   ========================================================================== */
-
-  /* ===== FOOTER ===== */
+ /* ===== FOOTER ===== */
   footer{
     background:#fff; 
     color:var(--ink);}
@@ -17,16 +12,17 @@
     gap:48px;
   }
   .footer-brand .logo{
-    color:var(--ink);
+    display:flex;
+    align-items:center;
     margin-bottom:30px;
+    text-align: center;
+}
+
+.footer-brand .logo img{
+    height:90px;
+    width:auto;
     display:block;
-    font-family:'playfair display', serif;
-    font-style:normal;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:0.03em;
-    font-size:1.7rem;
-  }
+}
   .footer-brand p{
     color:var(--muted); 
     font-size:0.88rem; 

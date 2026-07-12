@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', closeNav);
         });
     }
+    hamburgerBtn.addEventListener('click', toggleNav);
+    
 
     // Fermer le menu au clic en dehors
     document.addEventListener('click', function(e) {
@@ -195,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
 
     // ============================================================
     // 8. SMOOTH-SCROLL FOR IN-PAGE NAV LINKS

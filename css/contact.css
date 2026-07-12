@@ -1,39 +1,62 @@
 /* ==========================================================================
    PAGE CONTACT - STYLES GÉNÉRAUX
    ========================================================================== */
- .contact-page {
-    font-family: 'Playfair display', Arial, sans-serif;
-    padding: 90px 20px 110px;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 90px;
+    :root{
+    --terracotta: #B5624A;
+    --terracotta-dark: #9C4A32;
+    --terracotta-light: #D98868;
+    --cream: #FAF6EF;
+    --cream-2: #FFFFFF;
+    --ink: black;
+    --muted: #937765;
+    --taupe: #8C7A68;
+    --footer-brown: #937765;
+    --footer-brown-dark: #846753;
+    --navy: #56638A;
+    --navy-dark:#414d72;
+    --line: rgba(43,36,32,0.12);
   }
+  .contact-page{
+    font-family:'Playfair Display', serif;
+    padding:70px 20px 90px;
+    max-width:1200px;
+    margin:0 auto;
+    color:var(--ink);
 
-/* En-tête de la section (Titre + description) */
-.contact-header {
-    text-align: center;
+    display:flex;
+    flex-direction:column;
+
+    gap:40px;
 }
 
-.contact-header h1 {
-    font-size: 2.6rem;
-    font-family: 'Playfair display', serif;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #1F1F1F;
-  }
+/* En-tête de la section (Titre + description) */
+.contact-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    margin-bottom:55px;
+}
+@media (max-width:768px){
 
- .contact-header p {
-    padding-top: 25px;
-    color: #9C8570;
-    font-size: 1.05rem;
-    max-width: 620px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
+    .contact-header{
+        margin-bottom:30px;
+    }
+
+}
+
+.contact-header h1{
+    margin:0 0 18px;
+    line-height:1.2;
+}
+
+.contact-header p{
+    margin:0;
+    padding-top:0;      
+    max-width:650px;
+    line-height:1.7;
+}
 
 /* ==========================================================================
    DISPOSITION EN DEUX COLONNES (FLEXBOX)
@@ -41,25 +64,33 @@
 .contact-container {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
-    gap: 50px;
-  }
+    gap: 40px;
+    margin-bottom: 20px;
+}
+@media (max-width:768px){
 
+    .contact-container{
+        margin-bottom:25px;
+    }
+
+}
 /* Chaque colonne prend la moitié de l'espace */
  .contact-info, .contact-form-container {
     flex: 1;
     display: flex;
     flex-direction: column;
   }
-  .contact-info h2, .contact-form-container h2 {
-    font-size: 1.4rem;
-    margin-bottom: 28px;
-    font-family: 'Playfair display', serif;
-    font-weight: 600;
-    color: #1F1F1F;
-    padding: 8px;
-    margin: 20px auto;
-  }
+  .contact-info h2,
+.contact-form-container h2{
+    font-size:1.5rem;
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    color:var(--navy);
+    margin:0 0 24px;
+    padding:0;
+    line-height:1.3;
+    text-align: center;
+}
 
 /* ==========================================================================
    COLONNE GAUCHE : LES CARTES D'INFO (Restons en contact)
@@ -74,7 +105,7 @@
     display: flex;
     align-items: center;
     background-color: #FFFFFF;
-    border: 1px solid #56638A;
+    border: 1px solid var(--navy);
     box-shadow: 0 3px 14px rgba(0,0,0,0.045);
     padding: 20px 22px;
     border-radius: 10px;
@@ -86,7 +117,7 @@
   }
   .info-card:hover {
     transform: translateY(-6px);
-    border-color: #56638A;
+    border-color:var(--navy);
   }
 
 .info-icon {
@@ -98,12 +129,12 @@
     align-items: center;
     justify-content: center;
     font-size: 17px;
-    color: #56638A;
+    color: var(--navy);
   }
-  .icon-terracotta { background-color: #C1795A; }
-  .icon-slate { background-color: #55707A; }
-  .info-text h3 { font-size: 1.05rem; margin: 0 0 4px 0; color: #1F1F1F; font-weight: 600; }
-  .info-text p { margin: 0; color: #8C7A68; font-size: 0.92rem; line-height: 1.4; }
+  .icon-terracotta { background-color:var(--terracotta); }
+  .icon-slate { background-color:var(--navy-dark); }
+  .info-text h3 { font-size: 1.05rem; margin: 0 0 4px 0; color:var(--ink); font-weight: 600; }
+  .info-text p { margin: 0; color: var(--navy-dark); font-size: 0.92rem; line-height: 1.4; }
 
   @keyframes pulseIcon {
     0%, 100% { transform: scale(1); }
@@ -139,28 +170,28 @@
     border: 1px solid #E2DED9;
     border-radius: 6px;
     font-size: 0.98rem;
-    color: #333;
-    font-family: inherit;
+    color: var(--navy-dark);
+    font-family: 'Playfair display',serif;
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
   }
-  .contact-form input::placeholder, .contact-form textarea::placeholder { color: #A8A8A8; }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: #a39d9d; }
   .contact-form textarea { resize: vertical; min-height: 120px; }
   .contact-form input:focus, .contact-form textarea:focus {
     outline: none;
-    border-color: #56638A;
+    border-color:var(--navy-dark);
     box-shadow: 0 0 0 3px rgba(193,121,90,0.12);
   }
   .contact-form input.input-error, .contact-form textarea.input-error { border-color: #C0392B; }
 
 /* Le bouton WhatsApp */
 .btn-whatsapp {
-    background-color: #56638A;
+    background-color: var(--navy);
     color: #fff;
     border: none;
     padding: 15px;
     border-radius: 6px;
     font-size: 0.98rem;
-    font-family: inherit;
+    font-family: 'montserrat';
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -169,12 +200,12 @@
     transition: background-color 0.3s ease, transform 0.15s ease;
     margin-top: 6px;
   }
-  .btn-whatsapp:hover { background-color: #55707A; transform: translateY(-2px); }
+  .btn-whatsapp:hover { background-color:var(--navy-dark); transform: translateY(-2px); }
   .btn-whatsapp:active { transform: translateY(0); }
 
   .form-note {
     font-size: 0.85rem;
-    color: #999;
+    color: var(--terracotta-dark);
     text-align: center;
     margin: -4px 0 0;
     min-height: 1.1em;
@@ -182,35 +213,40 @@
   .form-note.success { color: #4C7A5B; }
 
 .btn-whatsapp:hover {
-    background-color: #43545B; /* Un peu plus sombre au survol */
+    background-color: var(--navy-dark); 
 }
 
 /* ==========================================================================
    SECTION 2 : SHOWROOM
    ========================================================================== */
- .showroom-section {
+.showroom-section {
     text-align: center;
-    border-top: 1px solid #EFEFEF;
-    padding-top: 55px;
-    opacity: 0;
-    transform: translateY(26px);
-  }
-  .showroom-section h2 {
-    font-size: 1.9rem;
-    font-family: 'Playfair display', serif;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #1F1F1F;
-  }
+    margin-top: 20px;
+    border-top: 1px solid #EEE;
+    padding-top: 30px;
+}
+@media (max-width:768px){
 
-.showroom-section p {
-    padding-top:15px;
-    color: #8C7A68;
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+    .showroom-section{
+        margin-top:30px;
+        padding-top:25px;
+    }
+
+}
+  .showroom-section h2 {
+    margin:0 0 18px;
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    line-height:1.2;
+}
+
+.showroom-section p{
+    max-width:700px;
+    margin:0 auto 30px;
+    line-height:1.8;
+    text-align:center;
+    color:var(--ink);
+}
 
 /* Le grand bloc gris/beige pour la carte */
 .showroom-map {
@@ -227,12 +263,12 @@
   .showroom-link {
     display: inline-block;
     font-size: 0.92rem;
-    color: #C1795A;
+    color: var(--terracotta);
     border-bottom: 1px solid transparent;
     transition: border-color 0.25s ease;
     padding-top: 30px;
   }
-  .showroom-link:hover { border-color: #C1795A; }
+  .showroom-link:hover { border-color:var(--terracotta-dark); }
 
    /* ---- Animation d'apparition au scroll ---- */
   .reveal-in { animation: fadeInUp 0.7s ease forwards; }
@@ -260,7 +296,7 @@
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background-color: #445962;
+    background-color: var(--navy-dark);
     color: #fff;
     padding: 14px 26px;
     border-radius: 6px;
@@ -277,3 +313,4 @@
     .contact-container { flex-direction: column; gap: 30px; }
     .contact-page { gap: 60px; padding: 50px 16px 80px; }
   }
+  

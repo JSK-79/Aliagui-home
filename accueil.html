@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/header.css">
@@ -18,13 +19,15 @@
 
 <header id="siteHeader">
   <div class="header-inner">
-    <a href="#top" class="logo">Aliagui Home</a>
+    <a href="#top" class="logo">
+      <img src="image/logo-bleu.png" alt="Aliagui Home">
+    </a>
 
     <nav id="mainNav">
       <ul>
         <li><a href="accueil.html">Accueil</a></li>
         <li><a href="notre-histoire.html">Notre histoire</a></li>
-        <li><a href="collections.html">Collection</a></li>
+        <li><a href="collections.html">Collections</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li class="mobile-only-cta">
           <a class="header-cta" href="https://wa.me/2250142789097" target="_blank" rel="noopener" data-social="WhatsApp">
@@ -64,60 +67,379 @@
       <h2>De Sublime Room à Aliagui Home</h2>
       <p>En <strong>2018</strong>, notre histoire commence sous le nom de Sublime Room, avec une ambition simple: sublimer les intérieurs grâce à un linge de maison de qualité.</p>
       <p>Au fil des années, notre vision s'est affirmée. Plus qu'un changement de nom, <strong>Aliagui Home</strong> incarne une identité plus forte: une maison de linge et d'art de vivre, ancrée dans la pagne, le confort et le raffinement.</p>
+      
       <a href="notre-histoire.html" class="btn btn-filled">En savoir plus</a>
     </div>
-    <div class="history-img reveal reveal-delay-2">
-      <span class="tag">Aliagui Home, depuis 2018</span>
+<div class="history-image">
+    <img src="image/histoire.jpeg" alt="De Sublime Room à Aliagui Home">
+</div>
     </div>
   </div>
 </section>
 
-<section class="collections" id="collections">
+<section class="bestsellers" id="bestsellers">
   <div class="section-head reveal">
-    <h2>Les dernières collections</h2>
-    <p>Découvrez nos collections de linge de maison pensées pour apporter chaleur, caractère et raffinement à chaque espace de vie.</p>
+    <h2>Les plus populaires </h2>
+    <p>Découvrez les créations les plus appréciées de notre collection, où l’élégance contemporaine rencontre la richesse des motifs africains.</p>
   </div>
   <div class="carousel-wrap">
-    <div class="carousel-track" id="collectionsTrack">
-      <div class="collection-card reveal reveal-delay-1">
-        <div class="collection-img"></div>
-        <div class="collection-body">
-          <h3>Draps de lit en pagne</h3>
-          <a href="detail.html" class="collection-link">Voir plus <span class="arrow">→</span></a>
-        </div>
-      </div>
-      <div class="collection-card reveal reveal-delay-2">
-        <div class="collection-img b"></div>
-        <div class="collection-body">
-          <h3>Décoration et services de table</h3>
-          <a href="detail.html" class="collection-link">Voir plus <span class="arrow">→</span></a>
-        </div>
-      </div>
-      <div class="collection-card reveal reveal-delay-3">
-        <div class="collection-img" style="background:linear-gradient(135deg,#A68D6F,#6B5643);"></div>
-        <div class="collection-body">
-          <h3>Nappes et chemins de table</h3>
-          <a href="detail.html" class="collection-link">Voir plus <span class="arrow">→</span></a>
-        </div>
-      </div>
-      <div class="collection-card reveal">
-        <div class="collection-img b" style="background:linear-gradient(135deg,#93826D,#584736);"></div>
-        <div class="collection-body">
-          <h3>Coussin et accessoires</h3>
-          <a href="detail.html" class="collection-link">Voir plus <span class="arrow">→</span></a>
-        </div>
-      </div>
+    <div class="carousel-track" id="bestsellersTrack">
+      <div class="bs-card reveal">
+
+    <div class="bs-img">
+        <img src="image/image_collections - Copie.jpeg" alt="Eclat d'ébène">
+        <span class="badge">Best-seller</span>
+    </div>
+
+    <div class="bs-body">
+        <h4>Éclat d’Ébène</h4>
+        <p class="description">
+          Une parure de lit élégante aux finitions soignées qui apporte une touche de raffinement à votre chambre.
+  </p>
+    <span class="price">41 500 FCFA</span>
+
+    </div>
+
+</div>
+      
+    <div class="bs-card reveal">
+
+    <div class="bs-img">
+        <img src="image/pagne_marron.jpeg" alt="Harmonie Sable">
+        <span class="badge">collection exclusive</span>
+    </div>
+
+    <div class="bs-body">
+        <h4> Harmonie Sable</h4>
+         <p class="description">
+         Des tons naturels et un tissu doux pour créer une ambiance chaleureuse et apaisante.
+  </p>
+        <span class="price">46 200 FCFA</span>
+    </div>
+
+</div>
+     <div class="bs-card reveal">
+
+    <div class="bs-img">
+        <img src="image/aimerez3.jpeg" alt="Prestige Akan">
+        <span class="badge">nouveau</span>
+    </div>
+
+    <div class="bs-body">
+        <h4>Prestige Akan</h4>
+          <p class="description">
+         Un ensemble de décoration de table inspiré du patrimoine africain pour des repas inoubliables.
+  </p>
+        <span class="price">40 300 FCFA</span>
+    </div>
+
+</div>
+ <div class="bs-card reveal">
+
+    <div class="bs-img">
+        <img src="image/aimerez7.jpeg" alt=" Douceur N’Zassa">
+        <span class="badge">Le plus vendus en ce moment</span>
+    </div>
+
+    <div class="bs-body">
+        <h4> Douceur N’Zassa</h4>
+         <p class="description">
+        Une parure raffinée qui transforme votre chambre en un espace de détente et de bien-être.
+  </p>
+        <span class="price">32 400 FCFA</span>
+    </div>
+
+</div>
+     <div class="bs-card reveal">
+
+    <div class="bs-img">
+        <img src="image/pagne4.jpeg" alt="Royal Indigo">
+        <span class="badge">nouveau</span>
+    </div>
+
+    <div class="bs-body">
+        <h4>Royal Indigo</h4>
+        <p class="description">
+          Une collection haut de gamme mêlant confort, élégance et motifs africains contemporains.
+  </p>
+        <span class="price">39 900 FCFA</span>
+    </div>
+
+</div>
+  <div class="bs-card reveal">
+
+    <div class="bs-img">
+        <img src="image/service de tbale autre.jpg.jpeg" alt="Élégance de Table">
+        <span class="badge">nouveau</span>
+    </div>
+
+    <div class="bs-body">
+        <h4>Élégance de Table</h4>
+        <p class="description">
+         Un service de table chic conçu pour embellir vos repas du quotidien comme vos réceptions.
+  </p>
+        <span class="price">29 900 FCFA</span>
+    </div>
+
+</div>
+
+  <div class="bs-card reveal">
+
+    <div class="bs-img">
+        <img src="image/713484324_1402554621900507_8804955900823046826_n.jpg" alt=" Signature Aliagui Luxe">
+        <span class="badge">nouveau</span>
+    </div>
+
+    <div class="bs-body">
+        <h4> Signature Aliagui Luxe</h4>
+        <p class="description">
+          Une création exclusive qui célèbre l’art africain à travers des textiles de qualité supérieure.
+  </p>
+        <span class="price">49 400 FCFA</span>
+      
+    </div>
+
+</div>
+
     </div>
     <div class="carousel-nav">
-      <button class="carousel-btn" id="collectionsPrev" aria-label="Précédent">
+      <button class="carousel-btn" id="bestsellersPrev" aria-label="Précédent">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
-      <button class="carousel-btn" id="collectionsNext" aria-label="Suivant">
+      <button class="carousel-btn" id="bestsellersNext" aria-label="Suivant">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
       </button>
     </div>
   </div>
-  <a href="collections.html" class="all-collections reveal">Découvrir toutes les collections <span class="arrow">→</span></a>
+</section>
+
+
+<section class="collections" id="collections">
+  <div class="section-head reveal">
+    <h2>Les dernières collections</h2>
+    <p>
+      Laissez-vous séduire par nos nouvelles créations, conçues avec soin pour apporter confort, authenticité et raffinement à votre maison.
+    </p>
+  </div>
+
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="collectionsTrack">
+
+      <!-- Carte 1 -->
+      <div class="collection-card reveal reveal-delay-1">
+        <img src="image/aimerez1.jpeg" alt="Oasis" class="collection-img">
+
+        <div class="collection-body">
+         <h3>Oasis</h3>
+            <p class="collection-desc">
+               Des teintes douces pour une ambiance apaisante.
+         </p>
+  <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+</div>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="collection-card reveal reveal-delay-2">
+        <img src="image/aimerez10.jpeg" alt="Azur" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Azur</h3>
+          <p class="collection-desc">
+    Des motifs uniques pour votre intérieur.
+  </p>
+           <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="collection-card reveal reveal-delay-3">
+        <img src="image/aimerez9.jpeg" alt="Mosaique" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Mosaique</h3>
+          <p class="collection-desc">
+    Des motifs uniques qui embellissent votre intérieur
+  </p>
+           <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 4 -->
+      <div class="collection-card reveal">
+        <img src="image/aimerez12.jpeg" alt="Teranga" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Teranga</h3>
+           <p class="collection-desc">
+   Chaleur, confort et inspiration africaine.
+  </p>
+           <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 5 -->
+      <div class="collection-card reveal reveal-delay-3">
+        <img src="image/COLLECTION1.jpeg" alt="collection Signature" class="collection-img">
+
+        <div class="collection-body">
+          <h3>collection Signature</h3>
+              <p class="collection-desc">
+   Notre sélection exclusive au style raffiné.
+  </p>
+    <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 6 -->
+      <div class="collection-card reveal reveal-delay-3">
+        <img src="image/LIT9.jpeg" alt="Emeraude" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Emeraude</h3>
+              <p class="collection-desc">
+   Des couleurs profondes pour un intérieur chic.
+  </p>
+           <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 7 -->
+      <div class="collection-card reveal reveal-delay-3">
+        <img src="image/LIT8.jpeg" alt="marbre" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Marbre</h3>
+              <p class="collection-desc">
+   Un design moderne inspiré de la pierre naturelle.
+  </p>
+           <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 8 -->
+      <div class="collection-card reveal reveal-delay-3">
+        <img src="image/LIT7.jpeg" alt="Savana" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Savana</h3>
+              <p class="collection-desc">
+   Une collection aux tons naturels et chaleureux.
+  </p>
+           <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 7 -->
+      <div class="collection-card reveal reveal-delay-3">
+        <img src="image/COUVERT1.jpeg" alt="Eclat rouge" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Eclat rouge</h3>
+              <p class="collection-desc">
+   Des couleurs intenses qui attirent le regard.
+  </p>
+           <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 8 -->
+      <div class="collection-card reveal reveal-delay-3">
+        <img src="image/LIT6.jpeg" alt="Kuba prestige" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Kuba prestige</h3>
+              <p class="collection-desc">
+  L'élégance du patrimoine africain revisitée.
+  </p>
+          <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 9 -->
+      <div class="collection-card reveal reveal-delay-3">
+        <img src="image/LIT5.jpeg" alt="Wax harmonie" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Wax harmonie</h3>
+              <p class="collection-desc">
+   Des imprimés wax pour une décoration authentique.
+  </p>
+           <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 10 -->
+      <div class="collection-card reveal reveal-delay-3">
+        <img src="image/TABLE2.jpeg" alt="Table élégance" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Table élégance</h3>
+              <p class="collection-desc">
+  Sublimez vos repas avec style et raffinement.
+  </p>
+           <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+        </div>
+      </div>
+
+      <!-- Carte 11 -->
+      <div class="collection-card reveal reveal-delay-3">
+        <img src="image/LIT3.jpeg" alt="Terre d'Afrique" class="collection-img">
+
+        <div class="collection-body">
+          <h3>Terre d'Afrique</h3>
+                  <p class="collection-desc">
+   Une collection inspirée des richesses africaines.
+  </p>
+       <a href="detail.html#vous-aimerez-aussi" class="collection-link">
+    Voir plus <span class="arrow">→</span>
+  </a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <button class="carousel-btn" id="collectionsPrev" aria-label="Précédent">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+
+      <button class="carousel-btn" id="collectionsNext" aria-label="Suivant">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <a href="collections.html" class="all-collections">
+    Découvrir toutes les collections <span class="arrow">→</span>
+  </a>
 </section>
 
 <section class="materials" id="matieres">
@@ -128,22 +450,28 @@
   <div class="carousel-wrap">
     <div class="carousel-track" id="materialsTrack">
       <div class="mat-card reveal reveal-delay-1">
-        <div class="mat-img" style="background:linear-gradient(135deg,#C9BBA5,#9C8570);"></div>
+        <div class="mat-img">
+    <img src="image/image_matieres1.jpeg" alt="100% coton">
+</div>
         <div class="mat-caption">
           <h4>100% coton</h4>
           <p>Sélectionné pour sa qualité, le coton apporte une sensation de bien-être tout en facilitant l'entretien.</p>
         </div>
       </div>
       <div class="mat-card reveal reveal-delay-2">
-        <div class="mat-img" style="background:linear-gradient(135deg,#8B7358,#5F4E3D);"></div>
+        <div class="mat-img">
+    <img src="image/image_matiere2.jpeg" alt="Wax">
+</div>
         <div class="mat-caption">
           <h4>Wax</h4>
           <p>Le wax apporte caractère et authenticité à chaque création. Il sublime votre intérieur en mêlant héritage africain et élégance contemporaine.</p>
         </div>
       </div>
       <div class="mat-card reveal reveal-delay-3">
-        <div class="mat-img" style="background:linear-gradient(135deg,#B29A7C,#7C6650);"></div>
-        <div class="mat-caption">
+       <div class="mat-img">
+    <img src="image/image_matiere3.jpeg" alt="Lin lavé">
+       </div>        
+       <div class="mat-caption">
           <h4>Lin lavé</h4>
           <p>Doux et respirant, le lin lavé offre une tombée naturelle et un confort qui s'améliore lavage après lavage.</p>
         </div>
@@ -160,29 +488,72 @@
   </div>
 </section>
 
-<section class="bestsellers" id="bestsellers">
-  <div class="section-head reveal">
-    <h2>Best sellers</h2>
-    <p>Les pièces préférées de nos clients — faites défiler pour tout découvrir.</p>
-  </div>
-  <div class="carousel-wrap">
-    <div class="carousel-track" id="bestsellersTrack">
-      <div class="bs-card reveal"><div class="bs-img" style="background:linear-gradient(135deg,#9C8570,#7C6650);"><span class="badge">Best-seller</span></div><div class="bs-body"><h4>Parure de lit "Anono"</h4><span class="price">45 000 FCFA</span></div></div>
-      <div class="bs-card reveal reveal-delay-1"><div class="bs-img" style="background:linear-gradient(135deg,#8B7358,#5F4E3D);"><span class="badge">Nouveau</span></div><div class="bs-body"><h4>Nappe brodée "Riviera"</h4><span class="price">32 000 FCFA</span></div></div>
-      <div class="bs-card reveal reveal-delay-2"><div class="bs-img" style="background:linear-gradient(135deg,#A68D6F,#6B5643);"></div><div class="bs-body"><h4>Set de table pagne</h4><span class="price">18 000 FCFA</span></div></div>
-      <div class="bs-card reveal reveal-delay-3"><div class="bs-img" style="background:linear-gradient(135deg,#93826D,#584736);"><span class="badge">Best-seller</span></div><div class="bs-body"><h4>Housse de couette "Kora"</h4><span class="price">52 000 FCFA</span></div></div>
-      <div class="bs-card reveal"><div class="bs-img" style="background:linear-gradient(135deg,#B29A7C,#7C6650);"></div><div class="bs-body"><h4>Serviettes éponge (x4)</h4><span class="price">22 000 FCFA</span></div></div>
-      <div class="bs-card reveal reveal-delay-1"><div class="bs-img" style="background:linear-gradient(135deg,#9C8570,#5F4E3D);"><span class="badge">Nouveau</span></div><div class="bs-body"><h4>Chemin de table pagne</h4><span class="price">15 000 FCFA</span></div></div>
+<section class="testimonials" id="avis">
+    <div class="section-head reveal">
+        <h2>Ils nous font confiance</h2>
+        <p>Découvrez les témoignages de nos clients satisfaits.</p>
     </div>
-    <div class="carousel-nav">
-      <button class="carousel-btn" id="bestsellersPrev" aria-label="Précédent">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button class="carousel-btn" id="bestsellersNext" aria-label="Suivant">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
+
+    <div class="testimonial-slider">
+
+        <div class="testimonial-card reveal">
+            <img src="image/temoingnage1.webp" alt="Client 1" class="client-photo">
+
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <p>
+                "Une qualité exceptionnelle. Les tissus sont magnifiques et les
+                finitions sont parfaites."
+            </p>
+
+            <h4>Aïcha K.</h4>
+        </div>
+
+        <div class="testimonial-card reveal">
+            <img src="image/temoignage3.jpg" alt="Client 2" class="client-photo">
+
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <p>
+                "Très satisfait de ma commande. Je recommande cette marque à
+                tous ceux qui aiment les belles décorations."
+            </p>
+
+            <h4>Serge N.</h4>
+        </div>
+
+        <div class="testimonial-card reveal">
+            <img src="image/temoignage4.jpg" alt="Client 3" class="client-photo">
+
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <p>
+                "Service professionnel, livraison rapide et produits de très
+                bonne qualité."
+            </p>
+
+            <h4>Fatou B.</h4>
+        </div>
+
     </div>
-  </div>
 </section>
 
 <section class="contact" id="contact">
@@ -239,10 +610,13 @@
   </div>
 </section>
 
+
 <footer>
   <div class="footer-top">
     <div class="footer-brand reveal">
-      <span class="logo">Aliagui Home</span>
+      <a href="#top" class="logo">
+    <img src="image/logo-bleu.png" alt="Aliagui Home">
+</a>
       <p>L'élégance au cœur de votre intérieur.</p>
     </div>
     <div class="footer-col reveal reveal-delay-1">
@@ -260,6 +634,9 @@
         <li><a href="collections.html#collections">Collection : draps de lit</a></li>
         <li><a href="collections.html#collections">Collection : services de table</a></li>
         <li><a href="collections.html#collections">Collection : décoration</a></li>
+        <li><a href="collections.html#collections">Collection : coussin housses</a></li>
+        <li><a href="collections.html#collections">Collection : Nappes de table</a></li>
+        <li><a href="collections.html#collections">Collection : Rideaux et voilages</a></li>
       </ul>
     </div>
     <div class="footer-col reveal reveal-delay-3">
@@ -290,13 +667,13 @@
       <div class="socials">
         <h5>Suivez-nous</h5>
         <div class="social-icons">
-          <a href="https://instagram.com/aliaguihome" target="_blank" rel="noopener" aria-label="Instagram" data-social="Instagram">
+          <a href="https://www.instagram.com/sublimeroomci?igsh=MmUyazBmeTF2NXh2" target="_blank" rel="noopener" aria-label="Instagram" data-social="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>
           </a>
-          <a href="https://facebook.com/aliaguihome" target="_blank" rel="noopener" aria-label="Facebook" data-social="Facebook">
+          <a href="https://www.facebook.com/share/1EQb1m7j7T/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" data-social="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.5H16l.4-3.4h-2.9V8c0-.99.28-1.66 1.7-1.66H16.5V3.3c-.28-.04-1.24-.12-2.36-.12-2.34 0-3.94 1.43-3.94 4.04v2.28H7.7v3.4h2.5V22z"/></svg>
           </a>
-          <a href="https://tiktok.com/@aliaguihome" target="_blank" rel="noopener" aria-label="TikTok" data-social="TikTok">
+          <a href="https://www.tiktok.com/@sublimeroom?_r=1&_t=ZS-97yz165ZXM1" target="_blank" rel="noopener" aria-label="TikTok" data-social="TikTok">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-.9-.85-1.4-2.03-1.4-3.32h-3.1v13.4a2.7 2.7 0 1 1-1.9-2.58v-3.15a5.8 5.8 0 1 0 5 5.75V9.4a6.9 6.9 0 0 0 3.7 1.07V7.4a4.2 4.2 0 0 1-2.3-1.58z"/></svg>
           </a>
           <a href="https://wa.me/2250142789097" target="_blank" rel="noopener" aria-label="WhatsApp" data-social="WhatsApp">

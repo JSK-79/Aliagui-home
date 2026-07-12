@@ -6,24 +6,13 @@ const WHATSAPP_NUMBER = "2250142789097";
 const productData = {
   title: "Parure de lit Wax Royal",
   images: [
-    {c1:"#c1633d", c2:"#8b7263", label:"Vue 1"},
-    {c1:"#2c3a52", c2:"#c1633d", label:"Vue 2"},
-    {c1:"#8b7263", c2:"#2c3a52", label:"Vue 3"},
-    {c1:"#f3e9dd", c2:"#c1633d", label:"Vue 4"},
+    "image/detail1.jpeg",
+    "image/detail2.jpeg",
+    "image/detail3.jpeg",
+    "image/detail4.jpeg"
   ]
 };
 
-// Génère une image placeholder en SVG (à remplacer par de vraies photos produit)
-function placeholderImg(c1, c2, label){
-  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='800'>
-    <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-      <stop offset='0%' stop-color='${c1}'/><stop offset='100%' stop-color='${c2}'/>
-    </linearGradient></defs>
-    <rect width='800' height='800' fill='url(#g)'/>
-    <text x='50%' y='52%' font-family='sans-serif' font-size='42' fill='#ffffffcc' text-anchor='middle'>${label}</text>
-  </svg>`;
-  return "data:image/svg+xml;base64," + btoa(svg);
-}
 
 /* ==========================================================================
    GALERIE PRODUIT (photos, miniatures, flèches, swipe)
@@ -39,7 +28,7 @@ function renderGallery(){
   productData.images.forEach((img, i) => {
     const thumb = document.createElement('div');
     thumb.className = 'thumb' + (i === currentImg ? ' active' : '');
-    thumb.innerHTML = `<img src="${placeholderImg(img.c1, img.c2, img.label)}" alt="Miniature ${i+1}">`;
+    thumb.innerHTML = `<img src="${img}" alt="Miniature ${i+1}">`;
     thumb.addEventListener('click', () => { currentImg = i; updateGallery(); });
     thumbnailRow.appendChild(thumb);
   });
@@ -48,11 +37,12 @@ function renderGallery(){
 
 function updateGallery(){
   const img = productData.images[currentImg];
+  
   mainImage.style.animation = 'none';
   void mainImage.offsetWidth; // relance l'animation
   mainImage.style.animation = 'imgIn .4s ease forwards';
-  mainImage.src = placeholderImg(img.c1, img.c2, img.label);
-  mainImage.alt = productData.title + " - " + img.label;
+  mainImage.src = img;
+  mainImage.alt = productData.title;
   [...thumbnailRow.children].forEach((t, i) => t.classList.toggle('active', i === currentImg));
 }
 
@@ -98,23 +88,57 @@ document.getElementById('whatsappAdviceBtn').href = waLink(`Bonjour, j'aimerais 
    SUGGESTIONS "VOUS AIMEREZ AUSSI" — carrousel avec pagination
    ========================================================================== */
 const suggestions = [
-  {name:"Parure Wax Bleu", c1:"#2c3a52", c2:"#c1633d"},
-  {name:"Service de table Ivoire", c1:"#f3e9dd", c2:"#8b7263"},
-  {name:"Coussin brodé Terracotta", c1:"#c1633d", c2:"#f3e9dd"},
-  {name:"Nappe imprimée Adire", c1:"#8b7263", c2:"#2c3a52"},
-  {name:"Plaid tissé Savane", c1:"#c1633d", c2:"#2c3a52"},
-  {name:"Set de coussins Wax", c1:"#2c3a52", c2:"#8b7263"},
+  {
+    name: "Couverture terre d'afrique",
+    description: "Une couverture élégante aux finitions soignées, idéale pour une chambre raffinée.",
+    image: "image/aimerez5.jpeg"
+  },
+  {
+    name: "Couverture Élégance",
+    description: "Apportez douceur et confort à votre intérieur avec ce modèle intemporel.",
+    image: "image/aimerez8.jpeg"
+  },
+  {
+    name: "Couverture Prestige",
+    description: "Un design moderne qui sublime votre espace de repos avec élégance.",
+    image: "image/aimerez4.jpeg"
+  },
+  {
+    name: "Chemin de table black and white",
+    description: "Des matières de qualité pour un table bien dressée",
+    image: "image/aimerez13.jpeg"
+  },
+  {
+    name: "Couverture Luxe",
+    description: "Une finition haut de gamme pour une décoration chaleureuse et chic.",
+    image: "image/aimerez2.jpeg"
+  },
+  {
+    name: "Chemin de table Horizon",
+    description: "Faites la table parfaite",
+    image: "image/aimerez11.jpeg"
+  }
 ];
 const track = document.getElementById('suggestionsTrack');
 suggestions.forEach(s => {
   const card = document.createElement('div');
   card.className = 'suggestion-card';
   card.innerHTML = `
-    <div class="card-img-placeholder"><img src="${placeholderImg(s.c1, s.c2, '')}" alt="${s.name}"></div>
+    <img src="${s.image}" alt="${s.name}">
+
     <div class="card-footer">
-      <span>${s.name.toUpperCase()}</span>
-      <a href="#">Voir les détails <i class="fa-solid fa-arrow-right"></i></a>
-    </div>`;
+        <h3>${s.name}</h3>
+
+        <p class="suggestion-description">
+            ${s.description}
+        </p>
+
+        <a href="#" class="details-btn">
+            Voir les détails
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+`;
   track.appendChild(card);
 });
 
@@ -166,3 +190,4 @@ function showToast(text){
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 2500);
 }
+

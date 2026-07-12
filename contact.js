@@ -96,13 +96,4 @@
           newsletterForm.reset();
         });
       }
-
-      /* ---- Menu mobile ---- */
-      const hamburgerBtn = document.getElementById('hamburgerBtn');
-      const mainNav = document.getElementById('mainNav');
-      if (hamburgerBtn && mainNav) {
-        hamburgerBtn.addEventListener('click', () => {
-          mainNav.classList.toggle('open');
-        });
-      }
     });

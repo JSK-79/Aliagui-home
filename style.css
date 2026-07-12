@@ -71,20 +71,22 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:18px 30px;
+    padding:6px 20px;
     transition:padding 0.35s ease;
     position:relative;
     gap:24px;
   }
   header.scrolled .header-inner{padding:12px 32px;}
   .logo{
-    font-family:'playfair display', serif;
-    font-size:1.7rem;
-    font-style:italic;
-    font-weight:600;
-    color:var(--cream);
-    letter-spacing:0.02em;
-  }
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:45px;
+    width:auto;
+    display:block;
+}
   nav a{
     font-size:0.82rem;
     letter-spacing:0.12em;
@@ -1033,9 +1035,9 @@
 /* ----- 2. Section principale produit ----- */
 .product-main-section{
     display:flex;
-    gap:60px;
+    gap:50px;
     align-items:flex-start;
-    margin-bottom:80px;
+    margin-bottom:70px;
 }
 
 /* Colonne gauche : galerie */
@@ -1083,10 +1085,9 @@
 
 /* Colonne droite : infos produit */
 .product-info-summary{
-    flex:1;
     display:flex;
     flex-direction:column;
-    gap:14px;
+    gap:12px;
 }
 .product-title{
     font-size:2.4rem;
@@ -1108,9 +1109,10 @@
 .product-actions{
     display:flex;
     flex-direction:column;
-    gap:14px;
-    margin-top:10px;
+    gap:12px;
+    margin-top:18px;
 }
+
 .btn-action{
     display:flex;
     align-items:center;
@@ -1213,9 +1215,9 @@
 }
 .reviews-dashboard{
     display:flex;
-    gap:50px;
+    gap:40px;
     align-items:flex-start;
-    margin-bottom:50px;
+    margin-bottom:40px;
 }
 .global-rating-box{
     display:flex;
@@ -1303,7 +1305,7 @@
 }
 .comments-grid{
     display:flex;
-    gap:26px;
+    gap:24px;
     flex-wrap:wrap;
 }
 .comment-card{

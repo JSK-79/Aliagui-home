@@ -1,13 +1,16 @@
-  :root{
-    --rust:#b6603f;
-    --rust-dark:#9a4d31;
-    --cream:#faf3ea;
-    --cream-soft:#f3e6d8;
-    --peach:#f1ddc7;
-    --navy:#26364c;
-    --ink:#2c2118;
-    --ink-soft:#6b5d51;
-    --line:#e8dcce;
+:root{
+    --terracotta: #B5624A;
+    --terracotta-dark: #9C4A32;
+    --terracotta-light: #D98868;
+    --cream: #FAF6EF;
+    --cream-2: #FFFFFF;
+    --ink: black;
+    --muted: #937765;
+    --taupe: #8C7A68;
+    --footer-brown: #937765;
+    --footer-brown-dark: #846753;
+    --navy: #56638A;
+    --line: rgba(43,36,32,0.12);
   }
 
   *{box-sizing:border-box;}
@@ -25,7 +28,7 @@
     font-family:'Playfair Display', serif;
     margin:0;
   }
-  p{ line-height:1.7; color:var(--ink-soft); }
+  p{ line-height:1.7; color:var(--ink); }
 
   /* ---------- reveal on scroll ---------- */
   .reveal{
@@ -52,6 +55,102 @@
   .stagger-item:nth-child(4){transition-delay:.44s;}
 
   /* ---------- Hero : pleine largeur ---------- */
+  .rebranding{
+    position:relative;
+    width:100%;
+    height:80vh;
+
+    background:url(../image/rebranding.png) center center/cover no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.rebranding .logo {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.rebranding .logo img {
+    width: 200px;   
+    height: auto;
+}
+.overlay{
+    position:absolute;
+    inset:0;
+    
+}
+
+.subtitle{
+
+    color:var(--terracotta);
+    letter-spacing:6px;
+    font-size:18px;
+    text-transform:uppercase;
+}
+
+.rebranding h1{
+
+    font-size:4rem;
+
+    margin:20px 0 0;
+
+    font-family:"Playfair display", serif;
+
+    font-weight:500;
+}
+
+.rebranding h2{
+
+    font-size:2.5rem;
+    color:var(--terracotta);
+    margin-top:-10px;
+    font-family:"playfair display", serif;
+}
+
+.rebranding p{
+
+    margin:30px auto;
+    line-height:1.8;
+    font-size:1rem;
+    max-width:650px;
+    color: var(--terracotta);
+    text-align: center;
+}
+
+.btn-rebranding{
+
+    display:inline-block;
+    padding:18px 45px;
+    border:1px solid var(--terracotta);
+    color:var(--terracotta);
+    text-decoration:none;
+    transition:.4s;
+    border-radius: 8px;
+}
+
+.btn-rebranding:hover{
+  background:var(--terracotta-dark);
+  color:var(--cream-2);
+}
+.rebranding-content{
+    display: flex;
+    opacity:0;
+    flex-direction: column;
+    transform:translateY(50px);
+    align-items: center;
+    transition:1.5s;
+}
+
+.rebranding.show .rebranding-content{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
   .hero{
     position:relative;
     width:100%;
@@ -68,7 +167,7 @@
     color:var(--ink);
     margin-bottom:24px;
   }
-  .hero-text h1 em{ font-style:italic; color:var(--rust); }
+  .hero-text h1 em{ font-style:italic; color:var(--terracotta); }
   .hero-text p{ font-size:16px; margin-bottom:16px; }
   .hero-text b{ color:var(--ink); font-weight:600; }
 
@@ -85,7 +184,7 @@
     position:absolute;
     inset:-6%;
     border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, var(--peach), var(--cream-soft));
+    background:radial-gradient(circle at 35% 30%, var(--cream), var(--cream2));
     animation:float 7s ease-in-out infinite;
     z-index:0;
   }
@@ -113,7 +212,7 @@
    /* ---------- Fabrications : panneau pêche ---------- */
   .fab-section{ width:100%; padding:20px 6vw 60px; }
   .fab-panel{
-    background:var(--peach);
+    background:var(--cream-2);
     border-radius:22px;
     padding:44px 4vw;
     display:flex;
@@ -124,16 +223,20 @@
   .fab-left h2{ font-size:26px; margin-bottom:14px; }
   .fab-left p{ font-size:14.5px; margin-bottom:8px; max-width:440px; }
 
-  .fab-right{
+ .fab-right{
     flex:1 1 48%;
+    max-width:500px;
+    height:580px;
     border-radius:14px;
     overflow:hidden;
-    min-height:280px;
-    background:#fff;
-    border:1px solid rgba(255,255,255,.6);
-  }
-  .fab-right img{ width:100%; height:100%; min-height:280px; object-fit:cover; filter:saturate(.75) sepia(.1); transition:transform .7s ease; }
-  .fab-right:hover img{ transform:scale(1.08); }
+}
+
+.fab-right img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+  
 
   .fab-items{ display:flex; gap:30px; margin-top:30px; }
   .fab-item{ text-align:center; transition:transform .35s ease; }
@@ -149,7 +252,7 @@
   }
   .fab-item:hover .fab-icon{ background:var(--navy-dark); transform:scale(1.08) rotate(-6deg); }
   .fab-icon svg{ width:22px; height:22px; }
-  .fab-item h4{ font-weight:700; font-size:12px; letter-spacing:.6px; margin-bottom:5px; color:var(--ink); }
+  .fab-item h4{ font-weight:700; font-size:12px; letter-spacing:.6px; margin-bottom:5px; color:var(--navy); }
   .fab-item p{ font-size:10.5px; line-height:1.4; margin:0; max-width:100px; }
 
 
